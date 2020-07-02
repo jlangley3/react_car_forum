@@ -1,7 +1,7 @@
 // src/NavBar.js
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import './Comp.css'
+import '../styles/Nav.css'
  
  
 class NavBar extends React.Component {

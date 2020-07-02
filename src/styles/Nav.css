@@ -1,0 +1,25 @@
+/* const link = {
+    '
+  }
+
+  style={link}
+          activeStyle={{
+            background: 'darkorange' */
+
+.link {
+    width: 6rem;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+    background: #FFC312;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+div {
+    height: 100%;
+}
+
+.nav {
+    background-color: black;
+}

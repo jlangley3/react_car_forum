@@ -1,7 +1,7 @@
 // src/DM.js
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import './DM.css'
+import '../styles/DM.css'
  
  
 export default class DM extends React.Component {

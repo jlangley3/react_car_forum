@@ -1,28 +1,3 @@
-/* const link = {
-    '
-  }
-
-  style={link}
-          activeStyle={{
-            background: 'darkorange' */
-
-.link {
-    width: 6rem;
-    padding: 1rem;
-    margin: 1rem 1rem 1rem 1rem;
-    background: green;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-div {
-    height: 100%;
-}
-
-.nav {
-    background-color: black;
-}
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
@@ -43,7 +18,8 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: fit-content;
+min-height: 20rem;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
@@ -62,6 +38,7 @@ cursor: pointer;
 }
 .card-header h3{
     color: white;
+    padding-right: 10rem;
     }
     
     .social_icon{
