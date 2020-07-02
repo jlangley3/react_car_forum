@@ -35,6 +35,9 @@ font-family: 'Numans', sans-serif;
 } */
 
 .container{
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
 height: 100%;
 align-content: center;
 }
