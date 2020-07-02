@@ -6,6 +6,8 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 import About from '../components/About';
 import DM from '../components/DM';
+import LoginContainer from '../containers/LoginContainer'
+import RegContainer from '../containers/RegContainer'
 // import redVette from '../images/redVette.jpg'
 
 function App() {
@@ -15,7 +17,8 @@ function App() {
         <NavBar />
         <div >
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login}/>
+        <Route exact path="/login" component={LoginContainer}/>
+        <Route exact path="/register" component={RegContainer}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/dm" component={DM}/>
         </div>
