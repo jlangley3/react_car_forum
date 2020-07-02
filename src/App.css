@@ -1,7 +1,17 @@
-.App {
-  text-align: center;
+body {
+  background-image: url(./images/redVette.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+
+.App {
+  text-align: center;
+  
+}
+.container{
+  font-weight: bold
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

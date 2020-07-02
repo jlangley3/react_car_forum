@@ -1,41 +1,31 @@
 // src/NavBar.js
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import './Comp.css'
  
-const link = {
-  width: '6rem',
-  padding: '1rem',
-  margin: '1rem 1rem 1rem 1rem',
-  background: 'green',
-  textDecoration: 'none',
-  color: 'white',
-  fontWeight: 'bold'
-}
  
 class NavBar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="nav">
         <NavLink
           to="/"
           exact
-          style={link}
+          className="link"
           activeStyle={{
             background: 'darkorange'
           }}
         >Home</NavLink>
         <NavLink
           to="/about"
-          exact
-          style={link}
+          className="link"
           activeStyle={{
             background: 'darkorange'
           }}
         >About</NavLink>
         <NavLink
           to="/login"
-          exact
-          style={link}
+          className="link"
           activeStyle={{
             background: 'darkorange'
           }}
