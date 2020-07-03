@@ -6,6 +6,8 @@
           activeStyle={{
             background: 'darkorange' */
 
+
+
 .link {
     width: 6rem;
     padding: 1rem;
@@ -17,9 +19,13 @@
     border-radius: 1rem;
 }
 
-.link:hover{
+.link:hover {
     color: black;
     background-color:whitesmoke;
+    }
+
+    .link:active {
+        background-color:darkorange;
     }
 
 div {
@@ -28,4 +34,8 @@ div {
 
 .nav {
     background-color: black;
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+font-family: 'Numans', sans-serif;
 }

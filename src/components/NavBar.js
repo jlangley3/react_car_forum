@@ -56,6 +56,27 @@ class NavBar extends React.Component {
             background: 'darkorange'
           }}
         >Search</NavLink>
+        <NavLink
+          to="/forum"
+          exact
+          className="link"
+          activeStyle={{
+            background: 'darkorange'
+          }}
+        >Forum</NavLink>
+         <NavLink
+          to="/profile"
+          exact
+          className="link"
+          activeStyle={{
+            background: 'darkorange'
+          }}
+        >Profile</NavLink>
+  {/* car search Form */}
+         <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Find Cars" aria-label="Find"/>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
       </div>
     )
   }

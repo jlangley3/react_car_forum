@@ -6,7 +6,7 @@ import '../styles/DM.css'
  
 export default class DM extends React.Component {
     render() {
-      return (<div><h1>DM</h1>
+      return (<div><h3>DM</h3>
       
       </div>)
     }

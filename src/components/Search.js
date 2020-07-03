@@ -13,12 +13,14 @@ const Search = props => {
 			</div>
       <div className="card-body">
       <form >
-{/* username */}
+{/* search */}
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
-							
 						</div>
 						<input  name="search" value="" type="text" className="form-control" placeholder="Search Vin"/>
+					</div>
+          <div className="form-group">
+						<input type="submit" value="Search" className="btn float-right login_btn"/>
 					</div>
           </form>
       </div>
