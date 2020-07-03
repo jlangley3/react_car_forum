@@ -1,45 +1,53 @@
 import React, {Component} from 'react'
 import Login from '../components/Login'
 
-const URL = "http://localhost:3000/api/v1/users"
+
+const URL = "http://localhost:3000/api/v1/profile"
 
 export default class LoginContainer extends Component {
 
     constructor(){
         super();
         this.state= {
-            users: [],
-            currentUser: null
+            username: "",
+            password: ""
+            
         }
  }
 
      testFetch = () => {
          console.log("You made it!")
+         let {username, password} = this.state
          fetch(URL, {
              method: "POST",
              headers: {"Content-Type": "application/json", "Accept": "application/json"},
              body: JSON.stringify({
-                   username: "Nance1973",
-                   "first_name": "Jim",
-                   "last_name": "Nance",
-                   email: "jim@email.com",
-                   bio: "a Sir",
-                   zip: "20033",
-                   "password_digest": "foot$33"
+                   username: username,
+                   "password_digest": password
                 }
              )
          })
          .then(resp => resp.json())
          .then(console.log)
      }
-     componentDidMount(){
-        // this.testFetch()
-     }
+    
+
+     handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      }
+
+      handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("Login stuff", event.target)
+    //    this.testFetch()
+      }
 
         render() {
        return (
            <div>
-            <Login />
+            <Login submit={this.handleSubmit} handleChange={this.handleChange} newUser={this.state}/>
            </div>
        )
 

@@ -18,6 +18,7 @@ class NavBar extends React.Component {
         >Home</NavLink>
         <NavLink
           to="/about"
+          exact
           className="link"
           activeStyle={{
             background: 'darkorange'
@@ -25,6 +26,7 @@ class NavBar extends React.Component {
         >About</NavLink>
         <NavLink
           to="/login"
+          exact
           className="link"
           activeStyle={{
             background: 'darkorange'
@@ -32,6 +34,7 @@ class NavBar extends React.Component {
         >Login</NavLink>
          <NavLink
           to="/dm"
+          exact
           className="link"
           activeStyle={{
             background: 'darkorange'
@@ -39,11 +42,20 @@ class NavBar extends React.Component {
         >DM</NavLink>
           <NavLink
           to="/register"
+          exact
           className="link"
           activeStyle={{
             background: 'darkorange'
           }}
         >Register</NavLink>
+         <NavLink
+          to="/search"
+          exact
+          className="link"
+          activeStyle={{
+            background: 'darkorange'
+          }}
+        >Search</NavLink>
       </div>
     )
   }

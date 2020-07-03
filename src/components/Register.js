@@ -1,6 +1,8 @@
 // src/register.js
 import React from 'react';
 import '../styles/Login.css'
+import { NavLink } from 'react-router-dom';
+
 
 class Register extends React.Component {
   render() {
@@ -11,11 +13,6 @@ class Register extends React.Component {
 		<div className="card">
 			<div className="card-header">
 				<h3>Register</h3>
-				{/* <div className="d-flex justify-content-end social_icon">
-					<span><i className="fab fa-facebook-square"></i></span>
-					<span><i className="fab fa-google-plus-square"></i></span>
-					<span><i className="fab fa-twitter-square"></i></span>
-				</div> */}
 			</div>
 			<div className="card-body">
 				<form onSubmit={this.props.submit}>

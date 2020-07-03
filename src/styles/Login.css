@@ -19,11 +19,12 @@ align-content: center;
 
 .card{
 height: fit-content;
-min-height: 20rem;
+/* min-height: 20rem; */
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: fit-content;
 background-color: rgba(0,0,0,0.5) !important;
+border-radius: 1rem;
 }
 
 .social_icon span{
@@ -61,7 +62,7 @@ cursor: pointer;
     }
     
     .remember{
-    color: white;
+    color: whitesmoke;
     }
     
     .remember input
@@ -75,16 +76,18 @@ cursor: pointer;
     .login_btn{
     color: black;
     background-color: #FFC312;
-    width: 100px;
+    width: 6rem;
+    border-radius: 1rem;
+    font-weight: bold;
     }
     
     .login_btn:hover{
     color: black;
-    background-color: white;
+    background-color: whitesmoke;
     }
     
     .links{
-    color: white;
+    color: whitesmoke;
     }
     
     .links a{
