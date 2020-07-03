@@ -1,12 +1,21 @@
 
 
 .post-div {
-    background: darkslategray;
+    background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+width: fit-content;
+align-content: center;
+background-color: black;
+color: whitesmoke
 }
 
 .preview {
 width: auto;
 height: 15rem;
 padding-bottom: 2rem;
+
 }
+
+
 

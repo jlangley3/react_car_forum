@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Posts from '../components/Posts'
-import Details from '../components/Details'
+import PostDetails from '../components/PostDetails'
+import PostBar from '../components/PostBar'
 
 
 const URL = "http://localhost:3000/posts"
@@ -12,16 +13,15 @@ export default class PostContainer extends Component {
         this.state= {
             postsArray: [  ]
             
+                    }
+                        }
+
+        componentDidMount() {
+            this.testFetch()
         }
- }
 
-componentDidMount() {
-    this.testFetch()
-}
-
-      testFetch = () => {
+        testFetch = () => {
          console.log("You made it!")
-         let {username, password} = this.state
          fetch(URL)
          .then(resp => resp.json())
          .then(postData => {
@@ -30,13 +30,20 @@ componentDidMount() {
              })
          })
      }
-
+          handleChange = () => {
+              console.log("handle Change")
+          }
+          handleSubmit = () => {
+              console.log("handle submit")
+          }
 
         render() {
 
        return (
            <div>
+               <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} state={this.state}/>
             {this.state.postsArray.map(post => <Posts post={post} key={post.id}/>)}
+            <PostDetails />
            </div>
        )
 
