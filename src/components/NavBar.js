@@ -65,13 +65,13 @@ class NavBar extends React.Component {
           }}
         >Forum</NavLink>
          <NavLink
-          to="/profile"
+          to="/posts"
           exact
           className="link"
           activeStyle={{
             background: 'darkorange'
           }}
-        >Profile</NavLink>
+        >Posts</NavLink>
   {/* car search Form */}
          <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Find Cars" aria-label="Find"/>
