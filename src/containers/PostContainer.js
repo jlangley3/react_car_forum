@@ -76,7 +76,14 @@ export default class PostContainer extends Component {
                 }))
         }
 
-        handleLinkToPost() {}
+        handleDelete(post) {
+            console.log("Delete", post)
+            fetch(URL + "/" + post.id, {
+                method: "DELETE"
+            })
+            .then(resp => resp.json())
+            .then(console.log)
+        }
 
         render() {
             console.log(this.state.props)
@@ -84,7 +91,7 @@ export default class PostContainer extends Component {
        return (
            <div>
                <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
-               <PostsList posts={this.state.postsArray} />
+               <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
             {/* <PostDetails />
             <Comments /> */}
              <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>

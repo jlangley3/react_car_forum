@@ -13,12 +13,12 @@ class Posts extends React.Component {
     return (
       <div className="card-deck">
     <div className="card">
-    <img className="card-img-top" src={picture} />
+    
     <div class="card-block">
-      <h4 className="card-title">{subject}</h4>
+      <h4 onClick={this.props.delete} className="card-title">{subject}</h4>
       <p class="card-text">{body}</p>
-      <Link key={id} post={this.props.post}  to={`/posts/${id}`}>{subject} Details</Link>
-      <p class="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+      <Link key={id} post={this.props.post}  to={`/posts/${id}`}><img className="card-img-top" src={picture} /></Link>
+      <p class="card-text"><small className="text-muted">...Click picture to see details</small></p>
 
     </div>
     </div>

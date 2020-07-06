@@ -16,10 +16,10 @@
     display: inline-block;
     flex-wrap: wrap;
     position: center;
-    padding-left: 5rem;
-    padding-right: 5rem;
-
-
+    width: fit-content;
+    padding: .5rem
+    /* padding-left: 5rem;
+    padding-right: 5rem; */
 }
 
 .card img {
@@ -30,13 +30,13 @@
     max-width: 15rem;
     height: 15rem;
     padding-bottom: 1rem;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 
 .card {
 width: 15rem;
 min-width: 15rem;
-max-width: 15rem;
+max-width: 30rem;
 }
  button {
      position: center;
