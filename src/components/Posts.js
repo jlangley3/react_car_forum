@@ -17,15 +17,15 @@ class Posts extends React.Component {
     <div class="card-block">
       <h4 onClick={this.props.delete} className="card-title">{subject}</h4>
       <p class="card-text">{body}</p>
-      <Link key={id} post={this.props.post}  to={`/posts/${id}`}><img className="card-img-top" src={picture} /></Link>
+      <Link key={id} post={subject}  to={`/posts/${id}`}><img className="card-img-top" src={picture} /></Link>
       <p class="card-text"><small className="text-muted">...Click picture to see details</small></p>
 
     </div>
     </div>
-    {/* <PostDetails />
-    <Comments /> */}
+    {/* <PostDetails postInfo={this.props.post.picture}/> */}
+    {/* <Comments /> */}
     </div>)
-
+    // <Route exact path="/props-through-render" render={(props) => <PropsPage {...props} title={`Props through render`} />} />
 
   }
 }

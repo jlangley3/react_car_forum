@@ -76,18 +76,22 @@ export default class PostContainer extends Component {
                 }))
         }
 
-        handleDelete(post) {
-            console.log("Delete", post)
+        handleDelete = (post) => {
+            console.log("Delete")
             fetch(URL + "/" + post.id, {
                 method: "DELETE"
             })
             .then(resp => resp.json())
-            .then(console.log)
+            .then(data => {console.log(data);
+            let newArray = this.state.postsArray.filter(p => p.id !== post.id)
+            this.setState({
+                postsArray: newArray
+            })
+        })
         }
 
         render() {
-            console.log(this.state.props)
-              let match = "2"
+            let {match}= this.props
        return (
            <div>
                <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
