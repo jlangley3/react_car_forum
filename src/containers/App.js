@@ -9,6 +9,7 @@ import DM from '../components/DM';
 import LoginContainer from '../containers/LoginContainer'
 import RegContainer from '../containers/RegContainer'
 import SearchContainer from './SearchContainer';
+import Comments from '../components/Comments';
 // import redVette from '../images/redVette.jpg'
 
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
         <Route exact path="/search" component={SearchContainer}/>
         <Route exact path="/dm" component={DM}/>
         <Route exact path="/posts" component={PostContainer}/>
+        <Route exact path="/comments" component={Comments}/>
         </div>
     </Router>
     </div>

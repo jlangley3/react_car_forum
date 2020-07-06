@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Posts from '../components/Posts'
 import PostDetails from '../components/PostDetails'
 import PostBar from '../components/PostBar'
+import Comments from '../components/Comments'
 
 
 const URL = "http://localhost:3000/posts"
@@ -11,10 +12,14 @@ export default class PostContainer extends Component {
             constructor(){
         super();
         this.state= {
-            postsArray: [  ]
-            
+            postsArray: [],
+            subject: "",
+            body: "",
+            picture: "",
+            user_id: 4
+         }
                     }
-                        }
+                       
 
         componentDidMount() {
             this.testFetch()
@@ -26,24 +31,57 @@ export default class PostContainer extends Component {
          .then(resp => resp.json())
          .then(postData => {
              this.setState({
-                 postsArray: postData
+                 postsArray: postData,
+                 body: "",
+                 subject: "",
+                 picture: ""
              })
          })
      }
-          handleChange = () => {
+          handleChange = (event) => {
               console.log("handle Change")
+              this.setState({
+                  [event.target.name]: event.target.value
+              })
           }
-          handleSubmit = () => {
+          handleSubmit = (event) => {
               console.log("handle submit")
+              event.preventDefault()
+              this.addFetch()
           }
+
+          addFetch = () => {
+            console.log("You made it!")
+            let {subject, body, picture} = this.state
+            fetch(URL, {
+                method: "POST",
+                headers: {"Content-Type": "application/json", "Accept": "application/json"},
+                body: JSON.stringify({
+                      subject: subject,
+                      body: body,
+                      picture: picture,
+                      user_id: 4
+                   }
+                )
+            })
+            .then(resp => resp.json())
+            .then(newPost => 
+                this.setState({
+                        body: "",
+                        subject: "",
+                        picture: "",
+                        postsArray: [newPost, ...this.state.postsArray]
+                }))
+        }
 
         render() {
 
        return (
            <div>
-               <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} state={this.state}/>
+               <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
             {this.state.postsArray.map(post => <Posts post={post} key={post.id}/>)}
-            <PostDetails />
+            {/* <PostDetails />
+            <Comments /> */}
            </div>
        )
 

@@ -2,20 +2,41 @@
 
 .post-div {
     background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-width: fit-content;
-align-content: center;
-background-color: black;
-color: whitesmoke
-}
-
-.preview {
-width: auto;
-height: 15rem;
-padding-bottom: 2rem;
-
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    max-width: 15rem;
+    text-overflow: unset;
+    align-content: center;
+    background-color: black;
+    color: whitesmoke
 }
 
 
+.card-deck {
+    display: inline-block;
+    flex-wrap: wrap;
+    position: center;
+    width: 10rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+}
+
+.card img {
+    height: 10rem;
+    width: 10rem;
+    position: center;
+    width: auto;
+    max-width: 15rem;
+    height: 15rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.card {
+min-width: 10rem;
+}
+ button {
+     position: center;
+ }
 

@@ -1,26 +1,23 @@
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-/* html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-} */
 
 .container{
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
-height: 100%;
 align-content: center;
+/* background-color: black; */
+/* background-image: url(../images/redVette.jpg); */
 }
 
 .card{
+position: center;
+border: center;
+border-top: rgba(0,0,0,0.5);
 height: fit-content;
 /* min-height: 20rem; */
-margin-top: auto;
+margin-top: 6rem;
 margin-bottom: auto;
 width: fit-content;
 background-color: rgba(0,0,0,0.5) !important;

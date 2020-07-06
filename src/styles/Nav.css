@@ -1,15 +1,8 @@
-/* const link = {
-    '
-  }
-
-  style={link}
-          activeStyle={{
-            background: 'darkorange' */
-
 
 
 .link {
-    width: 6rem;
+    width: fit-content;
+    height: fit-content;
     padding: 1rem;
     margin: 1rem 1rem 1rem 1rem;
     background: #FFC312;
@@ -28,14 +21,19 @@
         background-color:darkorange;
     }
 
-div {
+/* div {
     height: 100%;
-}
+} */
 
 .nav {
     background-color: black;
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-font-family: 'Numans', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Numans', sans-serif;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem;
 }

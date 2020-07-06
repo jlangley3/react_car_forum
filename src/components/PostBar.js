@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 class PostBar extends React.Component {
   render() {
-	// let {username, password} = this.props.newUser
+	let {subject, body, picture} = this.props.newPost
     return (     
 <div className="container">
 	<div className="d-flex justify-content-center h-100">
@@ -16,15 +16,26 @@ class PostBar extends React.Component {
 			</div>
 			<div className="card-body">
 				<form onSubmit={this.props.handleSubmit}>
-{/* username */}
+{/* Create new Post form */}
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
 						</div>
-						<input onChange={this.props.handleChange} name="username" value={this.props} type="text" className="form-control" placeholder="username"/>
+						<input onChange={this.props.handleChange} name="subject" value={subject} type="text" className="form-control" placeholder="subject"/>
+					</div>
+                    <div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<input onChange={this.props.handleChange} name="body" value={body} type="text" className="form-control" placeholder="Body of Post"/>
+					</div>
+					<div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<input onChange={this.props.handleChange} name="picture" value={picture} type="text" className="form-control" placeholder="Image Address"/>
 					</div>
 					<div className="form-group">
-						{/* <input type="submit" value="PostBar" className="btn float-right PostBar_btn"/> */}
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+                        <div className="form-group">
+						<input type="submit" value="Post!" className="btn float-right login_btn"/>
+					</div>
 					</div>
 				</form>
 			</div>

@@ -1,17 +1,30 @@
 // src/Posts.js
 import React from 'react';
+import PostDetails from '../components/PostDetails'
+import PostBar from '../components/PostBar'
+import Comments from './Comments'
 import "../styles/Posts.css"
  
 class Posts extends React.Component {
   
   render() {
-    console.log(this.props.post)
-    return <div className="post-div">
-      <h3>{this.props.post.body}</h3>
-    <img className="preview" src={this.props.post.picture} />
-
-    
+   
+    let {subject, body, picture, user} = this.props.post
+    return (
+      <div className="card-deck">
+    <div className="card">
+    <img className="card-img-top" src={picture} />
+    <div class="card-block">
+      <h4 className="card-title">{subject}</h4>
+      <p class="card-text">{body}</p>
+      <p class="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>  
     </div>
+    </div>
+    {/* <PostDetails />
+    <Comments /> */}
+    </div>)
+    
+    
   }
 }
  
