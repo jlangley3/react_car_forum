@@ -7,25 +7,21 @@ const URL = "http://localhost:3000/api/v1/profile"
 
 export default class SearchContainer extends Component {
 
-            constructor(){
+    constructor(){
         super();
         this.state= {
             details: [  ]
-            
-        }
- }
 
-        render() {
-       return (
-           <div>
+        }
+    }
+
+    render() {
+        return (
+            <div>
             <Search/>
             <Details />
-           </div>
-       )
-
-
-
-
+            </div>
+        )
     }
 }
 
@@ -46,7 +42,7 @@ export default class SearchContainer extends Component {
 //          .then(resp => resp.json())
 //          .then(console.log)
 //      }
-    
+
 
 //      handleChange = (event) => {
 //         this.setState({

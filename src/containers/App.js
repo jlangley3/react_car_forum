@@ -10,6 +10,7 @@ import LoginContainer from '../containers/LoginContainer'
 import RegContainer from '../containers/RegContainer'
 import SearchContainer from './SearchContainer';
 import Comments from '../components/Comments';
+import PostDetails from '../components/PostDetails';
 // import redVette from '../images/redVette.jpg'
 
 class App extends React.Component {
@@ -28,12 +29,13 @@ class App extends React.Component {
         <Route exact path="/dm" component={DM}/>
         <Route exact path="/posts" component={PostContainer}/>
         <Route exact path="/comments" component={Comments}/>
+        <Route path={`/posts/:postId`} component={PostDetails} />
         </div>
     </Router>
     </div>
   );
 }
   }
- 
+
 
 export default App;

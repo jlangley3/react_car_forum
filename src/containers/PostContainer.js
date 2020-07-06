@@ -3,7 +3,7 @@ import Posts from '../components/Posts'
 import PostDetails from '../components/PostDetails'
 import PostBar from '../components/PostBar'
 import Comments from '../components/Comments'
-
+import { NavLink } from 'react-router-dom'
 
 const URL = "http://localhost:3000/posts"
 
@@ -19,7 +19,7 @@ export default class PostContainer extends Component {
             user_id: 4
          }
                     }
-                       
+
 
         componentDidMount() {
             this.testFetch()
@@ -65,7 +65,7 @@ export default class PostContainer extends Component {
                 )
             })
             .then(resp => resp.json())
-            .then(newPost => 
+            .then(newPost =>
                 this.setState({
                         body: "",
                         subject: "",
@@ -74,12 +74,18 @@ export default class PostContainer extends Component {
                 }))
         }
 
+        handleLinkToPost() {}
+
         render() {
+
 
        return (
            <div>
                <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
-            {this.state.postsArray.map(post => <Posts post={post} key={post.id}/>)}
+            {this.state.postsArray.map(post =>
+                <NavLink to={`posts/${post.id}`}>
+                    <Posts post={post} key={post.id}/>
+                </NavLink>)}
             {/* <PostDetails />
             <Comments /> */}
            </div>
@@ -105,7 +111,7 @@ export default class PostContainer extends Component {
 //          .then(resp => resp.json())
 //          .then(console.log)
 //      }
-    
+
 
 //      handleChange = (event) => {
 //         this.setState({
