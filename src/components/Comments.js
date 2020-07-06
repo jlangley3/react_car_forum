@@ -55,20 +55,14 @@ class Comments extends React.Component {
                 )
             })
             .then(resp => resp.json())
-            .then(newPost => 
-                this.setState({
-                        body: "",
-                        subject: "",
-                        picture: "",
-                        postsArray: [newPost, ...this.state.postsArray]
-                }))
+            .then(console.log)
         }
 
   render() {
    
     return <div class="card-columns">
     <div class="card">
-      <img class="card-img-top img-fluid" src="..." alt="Card image cap"/>
+      <img class="card-img-top img-fluid" src="https://lcus1storage.azureedge.net/web/v3/images/global/US_BC_Static.png?v=0x8D6E559E6A5C322" alt="Card image cap"/>
       <div class="card-block">
         <h4 class="card-title">Card title that wraps to a new line</h4>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
