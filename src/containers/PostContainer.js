@@ -4,6 +4,8 @@ import PostDetails from '../components/PostDetails'
 import PostBar from '../components/PostBar'
 import Comments from '../components/Comments'
 import { NavLink } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import PostsList from '../components/PostsList';
 
 const URL = "http://localhost:3000/posts"
 
@@ -77,17 +79,17 @@ export default class PostContainer extends Component {
         handleLinkToPost() {}
 
         render() {
-
-
+            console.log(this.state.props)
+              let match = "2"
        return (
            <div>
                <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
-            {this.state.postsArray.map(post =>
-                <NavLink to={`posts/${post.id}`}>
-                    <Posts post={post} key={post.id}/>
-                </NavLink>)}
+               <PostsList posts={this.state.postsArray} />
             {/* <PostDetails />
             <Comments /> */}
+             <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
+    
+            <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
            </div>
        )
 

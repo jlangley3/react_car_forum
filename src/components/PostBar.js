@@ -1,6 +1,6 @@
 // src/PostBar.js
 import React from 'react';
-import '../styles/Posts.css'
+import '../styles/PostBar.css'
 import { NavLink } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ class PostBar extends React.Component {
   render() {
 	let {subject, body, picture} = this.props.newPost
     return (     
-<div className="container">
+<div className="container" id="my-form">
 	<div className="d-flex justify-content-center h-100">
 		<div className="card">
 			<div className="card-header">
