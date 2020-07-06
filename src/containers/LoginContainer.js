@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Login from '../components/Login'
 
 
-const URL = "http://localhost:3000/api/v1/profile"
+const URL = "http://localhost:3000/api/v1/login"
 
 export default class LoginContainer extends Component {
 
@@ -11,7 +11,7 @@ export default class LoginContainer extends Component {
         this.state= {
             username: "",
             password: ""
-            
+
         }
  }
 
@@ -23,14 +23,14 @@ export default class LoginContainer extends Component {
              headers: {"Content-Type": "application/json", "Accept": "application/json"},
              body: JSON.stringify({
                    username: username,
-                   "password_digest": password
+                   password: password
                 }
              )
          })
          .then(resp => resp.json())
          .then(console.log)
      }
-    
+
 
      handleChange = (event) => {
         this.setState({
@@ -42,6 +42,18 @@ export default class LoginContainer extends Component {
         event.preventDefault();
         console.log("Login stuff", event.target)
     //    this.testFetch()
+        let {username, password} = this.state
+        fetch(URL, {
+            method: "POST",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify({
+                  username: username,
+                  "password_digest": password
+               }
+            )
+        })
+        .then(resp => resp.json())
+        .then(console.log)
       }
 
         render() {

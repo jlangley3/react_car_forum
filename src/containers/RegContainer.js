@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Register from '../components/Register'
 
 
-const URL = "http://localhost:3000/api/v1/login"
+//const URL = "http://localhost:3000/api/v1/login"
+const URL = "http://localhost:3000/users"
 
 export default class RegContainer extends Component {
 
@@ -15,7 +16,7 @@ export default class RegContainer extends Component {
             email: "",
             zip: "",
             password: ""
-            
+
         }
  }
 
@@ -38,7 +39,7 @@ export default class RegContainer extends Component {
          .then(resp => resp.json())
          .then(console.log)
      }
-    
+
 
      handleChange = (event) => {
         this.setState({
