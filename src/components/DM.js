@@ -9,6 +9,16 @@ export default class DM extends React.Component {
       return (
       
       <div className="container">DM
+  
+      </div>)
+    }
+  }
+
+
+
+
+
+
   {/* <div className="row">
     <div className="col-sm-10 col-sm-offset-1" id="logout">
         <div className="page-header">
@@ -456,7 +466,3 @@ export default class DM extends React.Component {
   </div>
   <div className="notes text-center"><small>Image credits: uifaces.com</small></div>
 </div> */}
-      </div>)
-    }
-  }
-

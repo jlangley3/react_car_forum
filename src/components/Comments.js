@@ -6,34 +6,14 @@ const URL = "http://localhost:3000/comments"
 
 
 class Comments extends React.Component {
-    constructor(){
-        super();
-        this.state= {
-            currentPost: [],
-            comments: []
-         }
-                    }
-        handleDelete = (comment) => {
-          console.log("Delete", comment)
-          fetch(URL + "/" + comment.id, {
-              method: "DELETE"
-          })
-          .then(resp => resp.json())
-          .then(data => {console.log(data);
-          let newArray = this.state.comments.filter(c => c.id !== comment.id)
-          this.setState({
-              comments: newArray
-          })
-      })
-      }
-
+   
       render() {
       console.log(this.props.comment)
         return <div className="container" >
         <div className="card">
-          <img className="card-img-top img-fluid" src={this.props.picture ? this.props.picture : null} alt="Card image"/>
-      <p>{this.props.body}</p>
-      <button onClick={() => this.handleDelete(this.props.comment)}>DELETE</button>
+          <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card image"/>
+      <p>{this.props.comment.body}</p>
+      <button onClick={() => this.props.delete(this.props.comment)}>DELETE</button>
       </div>
       </div>
       }

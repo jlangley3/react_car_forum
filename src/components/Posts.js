@@ -14,7 +14,7 @@ class Posts extends React.Component {
       <div className="card-deck">
     <div className="card-b">
     
-    <div class="card-block">
+    <div className="card-block">
       <h4 className="card-title">{subject}</h4>
       <img className="card-img-top" src={picture} /><p class="card-text">{body}</p>
       <button onClick={this.props.delete}>DELETE</button>

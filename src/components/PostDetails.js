@@ -55,9 +55,23 @@ class PostDetails extends React.Component {
       })
   }
 
+  handleComDelete = (comment) => {
+    console.log("Delete", comment)
+    fetch(URL + "/" + comment.id, {
+        method: "DELETE"
+    })
+    .then(resp => resp.json())
+    .then(data => {console.log(data);
+    let newArray = this.state.currentPost.comments.filter(c => c.id !== comment.id)
+    this.setState({
+        comments: newArray
+    })
+})
+}
+
 
   render() {
-    let {picture, subject, body} = this.state.currentPost
+    let {picture, subject, body, comments} = this.state.currentPost
     return (<div><h1>{subject}</h1>
     <img className="row" src={picture} alt="Car Picture Here"/>
      <form onSubmit={this.handleSubmit}>
@@ -72,7 +86,7 @@ class PostDetails extends React.Component {
          </div>
          <input type="submit" value="submit" />
        </form>
-    <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment}/>)}</div>
+    <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment} delete={this.handleComDelete}/>)}</div>
     </div>)
   }
 }
