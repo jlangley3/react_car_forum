@@ -11,6 +11,7 @@ import RegContainer from '../containers/RegContainer'
 import SearchContainer from './SearchContainer';
 import Comments from '../components/Comments';
 import PostDetails from '../components/PostDetails';
+import DM from '../components/DM'
 
 // import redVette from '../images/redVette.jpg'
 
@@ -23,16 +24,17 @@ class App extends React.Component {
         <NavBar />
         <div >
           <Switch>
-       
-        <Route exact path="/login" component={LoginContainer}/>
-        <Route exact path="/register" component={RegContainer}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/search" component={SearchContainer}/>
-        <Route exact path="/dm" component={DMContainer}/>
-        <Route path={`/posts/:postId`} component={PostDetails} /> 
-        <Route exact path="/posts" component={PostContainer}/>
-        <Route exact path="/" render={() => <Redirect to="/login" />} />
-        <Route path="*" component={LoginContainer}/>
+            <Route exact path="/login" component={LoginContainer}/>
+            <Route exact path="/register" component={RegContainer}/>
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/search" component={SearchContainer}/>
+            <Route exact path="/dm" component={DMContainer}/>
+            <Route exact path="/my_messages" component={DM} />
+            <Route path={`/posts/:postId`} component={PostDetails} />
+            <Route exact path="/posts" component={PostContainer}/>
+            <Route exact path="/" render={() => <Redirect to="/login" />} />
+
+            <Route path="*" component={LoginContainer}/>
         </Switch>
         </div>
     </Router>

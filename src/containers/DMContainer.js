@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import DM from '../components/DM'
+import DMPreview from '../components/DMPreview'
 
 
 const URL = "http://localhost:3000/users/my_messages/"
@@ -9,7 +9,7 @@ export default class DMContainer extends Component {
     constructor(){
         super();
         this.state= {
-            user_id: 7, //fix with authentication
+            user_id: 8, //fix with authentication
             userDMs: []
 
         }
@@ -38,12 +38,12 @@ export default class DMContainer extends Component {
         })
       }
 
-   
+
 
         render() {
        return (
            <div>
-               {this.state.userDMs.map(dm => <DM dm={dm} key={dm.id} handleChange={this.handleChange} friendID={dm.friend_id} userID={this.state.user_id}/>)}
+               {this.state.userDMs.map(dm => <DMPreview dm={dm} key={dm.id} handleChange={this.handleChange} friendID={dm.friend_id} userID={this.state.user_id}/>)}
            </div>
        )
 
