@@ -3,13 +3,49 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/DM.css'
 
+const URL = "http://localhost:3000/messages/new"
 
 export default class DM extends React.Component {
+    constructor(){
+      super();
+      this.state= {
+          remarks: []
+      }
+    }
+
+    componentDidMount() {
+      fetch(URL, {
+                method: "POST",
+                headers: {"Content-Type": "application/json", "Accept": "application/json"},
+                body: JSON.stringify({
+                     first_person: this.props.userID,
+                     second_person: this.props.friendID
+                   }
+                )
+            })
+            .then(resp => resp.json())
+            .then(console.log)
+  
+    }
+
+
+
+
     render() {
       return (
 
       <div className="container">DM
-  <div className="row">
+          {}
+      </div>)
+    }
+  }
+
+
+
+
+
+
+  {/*<div className="row">
     <div className="col-sm-10 col-sm-offset-1" id="logout">
         <div className="page-header">
             <h3 className="reviews">Leave your comment</h3>
@@ -455,14 +491,4 @@ export default class DM extends React.Component {
     <h3 className="reviews"><span className="glyphicon glyphicon-magnet"></span></h3>
   </div>
   <div className="notes text-center"><small>Image credits: uifaces.com</small></div>
-      </div>)
-    }
-  }
-
-
-
-
-
-
-  {/*
 </div> */}
