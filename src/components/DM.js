@@ -32,7 +32,16 @@ export default class DM extends React.Component {
     }
 
     itsOwnThing = () => {
-        return this.state.remarks.map(r => <p> {r.body} </p>) // style this for real css align based on speaker (like on a chat app)
+        return (
+          <div>
+               {this.state.remarks.map(r => <p> {r.body} </p>)} 
+               {/* style this for real css align based on speaker (like on a chat app) */}
+            
+          </div>
+          
+        
+        
+        ) 
 
     }
 

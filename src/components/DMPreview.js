@@ -9,8 +9,8 @@ export default class DMPreview extends React.Component {
     constructor() {
         super()
         this.state = {
-            userID: null,
-            friendID: null,
+            // userID: null,
+            // friendID: null,
             toggle: false
         }
     }
@@ -22,17 +22,19 @@ export default class DMPreview extends React.Component {
         console.log(this.state.toggle)
     }
 
-    componentDidMount() {
-        this.setState({userID: this.props.userID, friendID: this.props.friendID})
-    }
+    // componentDidMount() {
+    //     this.setState({userID: this.props.userID, friendID: this.props.friendID})
+    // }
 
     render() {
+      console.log(this.props)
+      let {friend, friendID, user, userID} = this.props
       return (
           <div>
           <br/>
       <div className="container">
-        <h3 onClick={this.handleClick}> conversation between {this.state.userID} and {this.state.friendID} </h3>
-        {this.state.toggle ? <DM user={this.state.userID} friend={this.state.friendID} /> : null }
+        <button onClick={this.handleClick}> conversation between {user} and {friend} </button>
+        {this.state.toggle ? <DM user={userID} friend={friendID} /> : null }
 
       </div>
       </div>)
