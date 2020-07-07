@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Posts from '../components/Posts'
 import PostDetails from '../components/PostDetails'
-import PostBar from '../components/PostBar'
+import CreatePost from '../components/CreatePost'
 import Comments from '../components/Comments'
 import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom';
@@ -94,13 +94,12 @@ export default class PostContainer extends Component {
             let {match}= this.props
        return (
            <div>
-               <PostBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
+               <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
                <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
-            {/* <PostDetails />
-            <Comments /> */}
-             <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
     
-            <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
+                <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
+    
+                <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
            </div>
        )
 

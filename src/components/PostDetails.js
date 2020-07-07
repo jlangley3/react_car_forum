@@ -1,6 +1,7 @@
 // src/PostDetails.js
 import React from 'react';
 import Comments from '../components/Comments'
+import "../styles/Details.css"
 
 const URL = "http://localhost:3000"
 
@@ -48,7 +49,7 @@ class PostDetails extends React.Component {
     }
 
     handleChange = (event) => {
-      console.log("handle Change")
+      console.log("handle Change", event.target.value)
       this.setState({
           [event.target.name]: event.target.value
       })
@@ -56,23 +57,22 @@ class PostDetails extends React.Component {
 
 
   render() {
-    console.log(this.state)
     let {picture, subject, body} = this.state.currentPost
     return (<div><h1>{subject}</h1>
-    <img src={picture}/>
+    <img className="row" src={picture} alt="Car Picture Here"/>
      <form onSubmit={this.handleSubmit}>
          <h1>add comment</h1>
          <div>
-           <input onChange={this.handleChange} type="text" name="comment" placeholder="comment" />
+           <input onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
            <label htmlFor="comment">comment</label>
          </div>
          <div>
-           <input onChange={this.handleChange} type="picture" name="picture" placeholder="picture" />
+           <input onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
            <label htmlFor="picture">picture</label>
          </div>
          <input type="submit" value="submit" />
        </form>
-    <div>{this.state.currentPost.comments.map(comment => <Comments comment={comment}/>)}</div>
+    <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment}/>)}</div>
     </div>)
   }
 }

@@ -13,7 +13,34 @@ class Comments extends React.Component {
             comments: []
          }
                     }
-                       
+        handleDelete = (comment) => {
+          console.log("Delete", comment)
+          fetch(URL + "/" + comment.id, {
+              method: "DELETE"
+          })
+          .then(resp => resp.json())
+          .then(data => {console.log(data);
+          let newArray = this.state.comments.filter(c => c.id !== comment.id)
+          this.setState({
+              comments: newArray
+          })
+      })
+      }
+
+      render() {
+      console.log(this.props.comment)
+        return <div className="container" >
+        <div className="card">
+          <img className="card-img-top img-fluid" src={this.props.picture ? this.props.picture : null} alt="Card image"/>
+      <p>{this.props.body}</p>
+      <button onClick={() => this.handleDelete(this.props.comment)}>DELETE</button>
+      </div>
+      </div>
+      }
+    }
+ 
+export default Comments;
+
 
     //     componentDidMount() {
     //         this.testFetch()
@@ -57,16 +84,3 @@ class Comments extends React.Component {
     //         .then(resp => resp.json())
     //         .then(console.log)
     //     }
-
-  render() {
-   console.log(this.props)
-    return <div class="card-columns">
-    <div class="card">
-      <img class="card-img-top img-fluid" src={this.props.picture} alt="Card image cap"/>
-  <p>{this.props.body}</p>
-  </div>
-  </div>
-  }
-}
- 
-export default Comments;

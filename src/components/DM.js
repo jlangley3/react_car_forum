@@ -6,9 +6,10 @@ import '../styles/DM.css'
  
 export default class DM extends React.Component {
     render() {
-      return (<div><h3>DM</h3>
-      <div className="container">
-  <div className="row">
+      return (
+      
+      <div className="container">DM
+  {/* <div className="row">
     <div className="col-sm-10 col-sm-offset-1" id="logout">
         <div className="page-header">
             <h3 className="reviews">Leave your comment</h3>
@@ -454,7 +455,7 @@ export default class DM extends React.Component {
     <h3 className="reviews"><span className="glyphicon glyphicon-magnet"></span></h3>
   </div>
   <div className="notes text-center"><small>Image credits: uifaces.com</small></div>
-</div>
+</div> */}
       </div>)
     }
   }

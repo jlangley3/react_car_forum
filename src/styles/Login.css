@@ -7,6 +7,7 @@ background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
 align-content: center;
+
 /* background-color: black; */
 /* background-image: url(../images/redVette.jpg); */
 }
@@ -20,32 +21,13 @@ height: fit-content;
 margin-top: 6rem;
 margin-bottom: auto;
 width: fit-content;
+min-width: 30rem;
 background-color: rgba(0,0,0,0.5) !important;
 /* border-radius: 1rem; */
 
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
-}
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
-.card-header h3{
-    color: white;
-    padding-right: 10rem;
-    }
-    
-    .social_icon{
-    position: absolute;
-    right: 20px;
-    top: -45px;
-    }
-    
     .input-group-prepend span{
     width: 50px;
     background-color: #FFC312;

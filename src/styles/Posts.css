@@ -28,17 +28,39 @@
     position: center;
     width: auto;
     max-width: 15rem;
-    height: 15rem;
+    max-height: 15rem;
     padding-bottom: 1rem;
+    padding-left: 4rem;
+    display: flex;
     /* border-radius: 1rem; */
 }
 
-.card {
-width: 15rem;
-min-width: 15rem;
-max-width: 30rem;
+.card-b {
+    width: 15rem;
+    display: flex;
+    min-width: 15rem;
+    max-width: 15rem;
+    position: center;
+    border: center;
+    border-top: rgba(0,0,0,0.5);
+    height: fit-content;
+    /* min-height: 20rem; */
+    margin-top: 1rem;
+    margin-bottom: auto;
+    margin-left: 2rem;
+    background-color: rgba(0,0,0,0.5) !important;
+    /* border-radius: 1rem; */
 }
  button {
      position: center;
+     width: fit-content;
+     height: fit-content;
+     padding: 1rem;
+     margin: 1rem 1rem 1rem 1rem;
+     background: #FFC312;
+     text-decoration: none;
+     color: black;
+     font-weight: bold;
+     border-radius: 1rem;
  }
 

@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-/* html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-} */
 
 .container-d{
 background-repeat: no-repeat;
@@ -15,6 +8,7 @@ font-family: 'Numans', sans-serif;
 height: 100%;
 align-content: center;
 padding-top: 2rem;
+    
 }
 
 .card-d{
@@ -28,27 +22,13 @@ border-radius: 1rem;
 color: whitesmoke
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
-}
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
-}
 .card-header-d h3{
     color: white;
     padding-right: 10rem;
     }
     
-    .social_icon{
-    position: absolute;
-    right: 20px;
-    top: -45px;
-    }
-    
+  
     .input-group-prepend span{
     width: 50px;
     background-color: #FFC312;

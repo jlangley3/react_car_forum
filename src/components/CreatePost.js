@@ -1,10 +1,10 @@
 // src/PostBar.js
 import React from 'react';
-import '../styles/PostBar.css'
+import '../styles/CreatePost.css'
 import { NavLink } from 'react-router-dom';
 
 
-class PostBar extends React.Component {
+class CreatePost extends React.Component {
   render() {
 	let {subject, body, picture} = this.props.newPost
     return (     
@@ -46,4 +46,4 @@ class PostBar extends React.Component {
   }
 }
  
-export default PostBar;
+export default CreatePost;

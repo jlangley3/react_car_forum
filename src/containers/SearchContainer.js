@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Search from '../components/Search'
-import Details from '../components/Details'
+
 
 
 const URL = "http://localhost:3000/api/v1/profile"
@@ -19,7 +19,7 @@ export default class SearchContainer extends Component {
         return (
             <div>
             <Search/>
-            <Details />
+            
             </div>
         )
     }

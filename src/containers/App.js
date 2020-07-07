@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/App.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import Home from '../components/Home';
 import PostContainer from '../containers/PostContainer';
 import About from '../components/About';
 import DM from '../components/DM';
@@ -21,7 +20,7 @@ class App extends React.Component {
       <Router>
         <NavBar />
         <div >
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={LoginContainer} />
         <Route exact path="/login" component={LoginContainer}/>
         <Route exact path="/register" component={RegContainer}/>
         <Route exact path="/about" component={About}/>
