@@ -4,25 +4,26 @@ import '../styles/Main.css';
 
 const URL = "http://localhost:3000/users/my_messages/"
 const userURL = "http://localhost:3000/users"
+const mesgURL = "http://localhost:3000/messages/new"
+const remarkURL = "http://localhost:3000/remarks"
 
 export default class DMContainer extends Component {
 
     constructor(){
         super();
         this.state= {
-            user_id: 6, //fix with authentication
+            userID: null, //fix with authentication
             userDMs: [],
             showForm: false,
             message: "",
-            friendDM:"",
-            users: []
-
+            friendID: null,
+            users: [] // this populates with an array of user objects
         }
  }
 
      dmFetch = () => {
          console.log("dmFetch")
-         fetch(URL + this.state.user_id)
+         fetch(URL + this.props.currentUser.id)
          .then(resp => resp.json())
          .then(data => {
              console.log(data);
@@ -45,20 +46,47 @@ export default class DMContainer extends Component {
     }
 
      componentDidMount() {
+         this.setState({userID: this.props.currentUser.id})
          this.dmFetch();
          this.userFetch()
      }
 
 
      handleChange = (event) => {
-        this.setState({
+         // console.log(event.target.type)
+         if (event.currentTarget.type == 'select-one') {
+
+             let newFriendID = this.state.users.filter(u => u.username == event.currentTarget.value)[0].id
+             this.setState({friendID: newFriendID})
+
+        }else {this.setState({
           [event.target.name]: event.target.value
-        })
+      })}
       }
 
-      handleAdd = () => {
-          console.log("add")
+      handleAdd = (event) => {
+          event.preventDefault()
+          fetch(mesgURL, {
+              method: "POST",
+              headers: {"Content-Type": "application/json", Accept: "application/json"},
+              body: JSON.stringify({first_person: this.props.currentUser.id, second_person: this.state.friendID})
+          })
+          .then(res => res.json())
+          .then(d => {
+              fetch(remarkURL, {
+                  method: "POST",
+                  headers: {"Content-Type": "application/json", Accept: "application/json"},
+                  body: JSON.stringify({
+                      user_id: this.props.currentUser.id,
+                      message_id: d.id,
+                      body: this.state.message
+                  })
+              })
+              .then(res => res.json())
+              .then(console.log)
+          })
       }
+
       handleToggle = () => {
         this.setState({
             showForm: !this.state.showForm
@@ -88,7 +116,7 @@ export default class DMContainer extends Component {
                                 <input onChange= {this.handleChange} name="message" value={this.state.message} type="text" className="form-control" placeholder="message"/>
                             </div>
 
-                            <select name="cars" form="carform" className="custom-select" id="inputGroupSelect01">
+                            <select name="cars" form="carform" className="custom-select" id="inputGroupSelect01" onChange={this.handleChange}>
                             {this.state.users.map(user => <option className="dropdown-item" value={user.username}>{user.username}</option>)}
                             </select>
 
