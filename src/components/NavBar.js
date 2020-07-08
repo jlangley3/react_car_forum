@@ -69,7 +69,11 @@ class NavBar extends React.Component {
             color: 'limegreen'
           }}
         >Forum</NavLink> : null }
-        {this.props.currentUser ? <NavLink to="/login" exact onClick={this.handleLogout} className="fa fa-fw fa-xing"> Logout </NavLink> : null }
+        {this.props.currentUser ? <NavLink
+            to="/login" exact
+            onClick={this.handleLogout}
+            className="fa fa-fw fa-xing">
+        Logout</NavLink> : null }
 
       </div>
     )

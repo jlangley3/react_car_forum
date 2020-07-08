@@ -11,7 +11,6 @@ export default class LoginContainer extends Component {
         this.state= {
             username: "",
             password: ""
-
         }
     }
 

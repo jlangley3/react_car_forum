@@ -12,82 +12,91 @@ export default class DMContainer extends Component {
     constructor(){
         super();
         this.state= {
-            userID: null, //fix with authentication
             userDMs: [],
             showForm: false,
             message: "",
             friendID: null,
             users: [] // this populates with an array of user objects
         }
- }
+    }
 
-     dmFetch = () => {
-         console.log("dmFetch")
-         fetch(URL + this.props.currentUser.id)
-         .then(resp => resp.json())
-         .then(data => {
-             console.log(data);
-             this.setState({
-                 userDMs: data
-             })
-         })
-     }
+    dmFetch = () => {
+        // this returns an array of message objects.
+        // serializes some information about the user and friend
+        // mesg #=> {id: 21, user_id: 16, friend_id: 17, user: {first_name, username:}, friend: {first_name, username:} }
 
-     userFetch = () => {
-        console.log("dmFetch")
+        fetch(URL + this.props.currentUser.id)
+        .then(resp => resp.json())
+        .then(data => {
+            //console.log(data);
+            this.setState({
+                userDMs: data
+            })
+        })
+        .then(() => this.userFetch())
+        .then(() => console.log("QWERTYUOP", this.state))
+    }
+
+    userFetch = () => {
+        // this is so we can populate the Username Select form
+        // should probably make a simpler url that sends only usernames and ids
         fetch(userURL)
         .then(resp => resp.json())
         .then(data => {
-            console.log(data);
+            let removedSelf = data.filter(u => u.id != this.props.currentUser.id)
+            // you cannot send a message to yourself! this isn't Slack.
             this.setState({
-                users: data
+                users: removedSelf
             })
         })
     }
 
-     componentDidMount() {
-         this.setState({userID: this.props.currentUser.id})
-         this.dmFetch();
-         this.userFetch()
-     }
+    componentDidMount() {
+        this.dmFetch();
+    }
 
 
-     handleChange = (event) => {
-         // console.log(event.target.type)
-         if (event.currentTarget.type == 'select-one') {
+    handleChange = (event) => {
+        // console.log(event.target.type)
+        if (event.currentTarget.type == 'select-one') {
 
-             let newFriendID = this.state.users.filter(u => u.username == event.currentTarget.value)[0].id
-             this.setState({friendID: newFriendID})
+            let newFriendID = this.state.users.filter(u => u.username == event.currentTarget.value)[0].id
+            this.setState({friendID: newFriendID})
 
         }else {this.setState({
-          [event.target.name]: event.target.value
-      })}
-      }
+            [event.target.name]: event.target.value
+        })}
+    }
 
-      handleAdd = (event) => {
-          event.preventDefault()
-          fetch(mesgURL, {
-              method: "POST",
-              headers: {"Content-Type": "application/json", Accept: "application/json"},
-              body: JSON.stringify({first_person: this.props.currentUser.id, second_person: this.state.friendID})
-          })
-          .then(res => res.json())
-          .then(d => {
-              fetch(remarkURL, {
-                  method: "POST",
-                  headers: {"Content-Type": "application/json", Accept: "application/json"},
-                  body: JSON.stringify({
-                      user_id: this.props.currentUser.id,
-                      message_id: d.id,
-                      body: this.state.message
-                  })
-              })
-              .then(res => res.json())
-              .then(console.log)
-          })
-      }
+    handleAdd = (event) => { // this is complicated!
+        event.preventDefault()
+        fetch(mesgURL, { //identifies the correct message.id we need, which is required for a remark
+            method: "POST",
+            headers: {"Content-Type": "application/json", Accept: "application/json"},
+            body: JSON.stringify({first_person: this.props.currentUser.id, second_person: this.state.friendID})
+        })
+        .then(res => res.json())
+        .then(d => {
+            //console.log("ALSO POSSIBLE", d)
+            this.setState({userDMs: [...this.state.userDMs, d]})
+            fetch(remarkURL, {
+                method: "POST",
+                headers: {"Content-Type": "application/json", Accept: "application/json"},
+                body: JSON.stringify({
+                    user_id: this.props.currentUser.id,
+                    message_id: d.id, // here's why we called the first fetch call
+                    body: this.state.message
+                })
+            })
+            .then(res => res.json())
+            .then(dTwo => {
+                // console.log("WHAT I GET BACK", d)
+                this.setState({message: ""})
+            })
+        })
+    }
 
-      handleToggle = () => {
+    handleToggle = () => {
         this.setState({
             showForm: !this.state.showForm
         })
@@ -95,9 +104,9 @@ export default class DMContainer extends Component {
 
 
 
-        render() {
+    render() {
 
-       return (
+        return (
            <div className="projects">
                <button onClick={this.handleToggle}>Add DM</button>
                {this.state.showForm ?
@@ -131,12 +140,14 @@ export default class DMContainer extends Component {
 
                : null}
 
-               {this.state.userDMs.map(dm => <DMPreview dm={dm} key={dm.id} handleChange={this.handleChange} user={dm.user.first_name} friend={dm.friend.first_name} friendID={dm.friend_id} userID={this.state.user_id}/>)}
+               {this.state.userDMs.map(dm => <DMPreview
+                   key={dm.id}
+                   currentUser={this.props.currentUser}
+                   dm={dm}
+                   handleChange={this.handleChange}
+                   />)}
            </div>
        )
-
-
-
 
     }
 }

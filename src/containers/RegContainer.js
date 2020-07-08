@@ -20,7 +20,7 @@ export default class RegContainer extends Component {
         }
  }
 
-     testFetch = () => {
+    postNewUsertoDB = () => {
          console.log("You made it!")
          let {username, firstName, lastName, email, zip, password} = this.state
          fetch(URL, {
@@ -67,7 +67,7 @@ export default class RegContainer extends Component {
             })
         })
         .then(x => {
-            window.location.replace('localhost:3000/login') //
+            window.location.replace('localhost:3000/login') // look into this.
         })
      }
 
@@ -80,7 +80,7 @@ export default class RegContainer extends Component {
 
       handleSubmit = (event) => {
         event.preventDefault();
-       this.testFetch()
+        this.postNewUsertoDB()
       }
 
         render() {
