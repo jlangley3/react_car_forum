@@ -85,12 +85,6 @@ class App extends React.Component {
                         :
                         <Redirect to="/login" />}/>
 
-{/* <Route exact path="/" render={() => <div>Home</div>} />
-    <Route path='/movies' render={routerProps => <MoviesPage {...routerProps}
-    movies={this.state.movies}/>} />} */}
-
-
-
                 <Route exact path="/posts" render={ (routerProps) =>
                     this.state.currentUser ?
                         <PostContainer {...routerProps} currentUser={this.state.currentUser} />

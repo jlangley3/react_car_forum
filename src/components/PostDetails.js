@@ -5,29 +5,34 @@ import "../styles/Details.css"
 
 const URL = "http://localhost:3000"
 
-class PostDetails extends React.Component {
-
-    state= {
-        currentPost:  {
-            comments:[]
-        },
-        body: "",
-        picture: ""
+export default class PostDetails extends React.Component {
+    constructor() {
+        super()
+        this.state= {
+            currentPost:  {
+                comments:[]
+            },
+            body: "",
+            picture: ""
+        }
     }
+
 
     componentDidMount() {
-       this.fetchPostData()
+        this.fetchPostData()
     }
 
 
-      fetchPostData =() => {
+    fetchPostData =() => {
+        // kind of the opposite of the point of React.
+        // we use this a lot.
         console.log("fetching post details")
         fetch(URL + this.props.location.pathname)
         .then(resp => resp.json())
         .then(data => this.setState({
             currentPost: data
         }))
-      }
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -39,17 +44,17 @@ class PostDetails extends React.Component {
             body: JSON.stringify({
                 body: this.state.body,
                 picture: this.state.picture,
-                user_id: 9,
+                user_id: this.props.currentUser.id,
                 post_id: this.state.currentPost.id
             })
         })
         .then(resp => resp.json())
         .then(data => {this.fetchPostData();
-          this.setState({
-            body: "",
-            picture: "",
-        })}
-          )
+            this.setState({
+                body: "",
+                picture: "",
+            })}
+        )
     }
 
     handleChange = (event) => {
@@ -73,26 +78,26 @@ class PostDetails extends React.Component {
                 currentPost: {comments: newArray}
             })
         })
+        .then(this.fetchPostData)
     }
 
 
     render() {
         let {picture, subject, body, comments} = this.state.currentPost
+        console.log("PICTURE", picture)
         return (<div className="container-banner" ><h1>{subject}</h1>
             <img className="row" src={picture} alt="Car Here"/>
             <form onSubmit={this.handleSubmit} className="card-c">
-            <h1>add comment</h1>
-            <div>
-            <input className="remember" onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
-            <label htmlFor="comment">comment</label>
-            <input className="remember" onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
-            <label htmlFor="picture">picture</label>
-            </div>
-            <input type="submit" value="submit" />
+                <h1>add comment</h1>
+                <div>
+                    <input className="remember" onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
+                    <label htmlFor="comment">comment</label>
+                    <input className="remember" onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
+                    <label htmlFor="picture">picture</label>
+                </div>
+                <input type="submit" value="submit" />
             </form>
-            <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment} delete={this.handleComDelete}/>)}</div>
+            <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment} delete={this.handleComDelete} experiment={this.fetchPostData}/>)}</div>
             </div>)
         }
     }
-
-    export default PostDetails;

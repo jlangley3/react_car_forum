@@ -61,7 +61,7 @@ export default class PostContainer extends Component {
                   subject: subject,
                   body: body,
                   picture: picture,
-                  user_id: 4
+                  user_id: this.props.currentUser.id
                }
             )
         })
@@ -92,14 +92,14 @@ export default class PostContainer extends Component {
         render() {
             let {match}= this.props
             console.log("PC" ,this.props)
-       return (
-           <div>
+        return (
+            <div>
                 <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
-                <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
+                <PostsList posts={this.state.postsArray} handleDelete={this.handleDelete} currentUser={this.props.currentUser}/>
                 <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
                 <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
 
-           </div>
+            </div>
        )
 
     }
