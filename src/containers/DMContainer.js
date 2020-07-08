@@ -49,7 +49,7 @@ export default class DMContainer extends Component {
          this.userFetch()
      }
 
-     
+
      handleChange = (event) => {
         this.setState({
           [event.target.name]: event.target.value
@@ -68,11 +68,11 @@ export default class DMContainer extends Component {
 
 
         render() {
-            
+
        return (
            <div className="projects">
                <button onClick={this.handleToggle}>Add DM</button>
-               {this.state.showForm ? 
+               {this.state.showForm ?
                 <div className="container">
             <div className="d-flex justify-content-center h-100">
                 <div className="card">
@@ -88,10 +88,10 @@ export default class DMContainer extends Component {
                                 <input onChange= {this.handleChange} name="message" value={this.state.message} type="text" className="form-control" placeholder="message"/>
                             </div>
 
-                            <select name="cars" id="cars" form="carform" className="custom-select" id="inputGroupSelect01">
+                            <select name="cars" form="carform" className="custom-select" id="inputGroupSelect01">
                             {this.state.users.map(user => <option className="dropdown-item" value={user.username}>{user.username}</option>)}
                             </select>
-                            
+
                             <div className="form-group">
                                 <input type="submit" value="create" className="btn float-right login_btn"/>
                             </div>
@@ -100,9 +100,9 @@ export default class DMContainer extends Component {
                 </div>
             </div>
         </div>
-               
+
                : null}
-                 
+
                {this.state.userDMs.map(dm => <DMPreview dm={dm} key={dm.id} handleChange={this.handleChange} user={dm.user.first_name} friend={dm.friend.first_name} friendID={dm.friend_id} userID={this.state.user_id}/>)}
            </div>
        )

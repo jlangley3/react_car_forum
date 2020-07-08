@@ -2,7 +2,7 @@
 import React from 'react';
 import '../styles/Login.css'
 
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 
 class Register extends React.Component {
@@ -23,7 +23,7 @@ class Register extends React.Component {
 							<span className="input-group-text"><i className="fas fa-user"></i></span>
 						</div>
 						<input onChange={this.props.handleChange} name="username" value={username} type="text" className="form-control" placeholder="username"/>
-						
+
 					</div>
 {/* Password */}
 					<div className="input-group form-group">
@@ -75,5 +75,5 @@ class Register extends React.Component {
     );
   }
 }
- 
+
 export default Register;

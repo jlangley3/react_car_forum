@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import Posts from '../components/Posts'
-import PostDetails from '../components/PostDetails'
+// import PostDetails from '../components/PostDetails'
 import CreatePost from '../components/CreatePost'
-import Comments from '../components/Comments'
-import { NavLink } from 'react-router-dom'
+// import Comments from '../components/Comments'
+// import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom';
 import PostsList from '../components/PostsList';
 
@@ -96,9 +96,9 @@ export default class PostContainer extends Component {
            <div>
                <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
                <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
-    
+
                 <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
-    
+
                 <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
            </div>
        )

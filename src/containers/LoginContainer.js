@@ -37,7 +37,8 @@ export default class LoginContainer extends Component {
             alert(data.message)
         } else {
             localStorage.setItem('jwt', data.token)
-            this.props.updateUser(data.user_data)
+            console.log("QWERTY", data)
+            this.props.updateUser(data.user)
         }
 
     })

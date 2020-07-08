@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 class Login extends React.Component {
   render() {
 	let {username, password} = this.props.newUser
-    return (     
+    return (
 <div className="container">
 	<div className="d-flex justify-content-center h-100">
 		<div className="card">
@@ -22,7 +22,7 @@ class Login extends React.Component {
 							<span className="input-group-text"><i className="fas fa-user"></i></span>
 						</div>
 						<input onChange={this.props.handleChange} name="username" value={username} type="text" className="form-control" placeholder="username"/>
-						
+
 					</div>
 {/* Password */}
 					<div className="input-group form-group">
@@ -31,9 +31,9 @@ class Login extends React.Component {
 						</div>
 						<input onChange={this.props.handleChange} name="password" value={password} type="password" className="form-control" placeholder="password"/>
 					</div>
-					<div className="row align-items-center remember">
+					{/*<div className="row align-items-center remember">
 						<input type="checkbox"/>Remember Me
-					</div>
+					</div> */}
 					<div className="form-group">
 						<input type="submit" value="Login" className="btn float-right login_btn"/>
 					</div>
@@ -46,9 +46,9 @@ class Login extends React.Component {
 										exact
 										>Register</NavLink>
 				</div>
-				<div className="d-flex justify-content-center">
+				{/*}<div className="d-flex justify-content-center">
 					<a href="#">Forgot your password?</a>
-				</div>
+				</div>*/}
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@ class Login extends React.Component {
     );
   }
 }
- 
+
 export default Login;
 
 

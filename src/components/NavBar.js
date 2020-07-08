@@ -2,15 +2,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Nav.css';
- 
- 
+
 class NavBar extends React.Component {
+
+    handleLogout = () => {
+        localStorage.clear()
+        this.props.updateUser(null)
+    }
+
   render() {
     return (
-      <div className="navbar">           
+      <div className="navbar">
         <NavLink
           to="/profile"
-          exact 
+          exact
           className="fa fa-fw fa-home"
           activeStyle={{
             color: 'limegreen'
@@ -64,10 +69,11 @@ class NavBar extends React.Component {
             color: 'limegreen'
           }}
         >Forum</NavLink>
-     
+        <NavLink to="/login" exact onClick={this.handleLogout} className="fa fa-fw fa-xing"> Logout </NavLink>
+
       </div>
     )
   }
 }
- 
+
 export default NavBar;

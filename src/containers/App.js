@@ -19,14 +19,14 @@ import Header from '../components/Header';
 class App extends React.Component {
     constructor() {
         super()
-        this.state  = {
-            currentUser: null
-        }
+        this.state = {currentUser: null}
     }
 
     componentDidMount() {
+        // console.log("APP DID MOUNT 1")
         if (localStorage.getItem('jwt')){
-            fetch("http://localhost3000/api/v1/token", {
+            console.log("JWT FOUND")
+            fetch("http://localhost:3000/api/v1/token", {
                 method: "GET",
                 headers: {
                     "Authentication": localStorage.getItem("jwt")
@@ -34,7 +34,7 @@ class App extends React.Component {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log("APP DID MOUNT 2", data) //works
                 this.updateUser(data)
             })
         }
@@ -49,7 +49,7 @@ class App extends React.Component {
             <div className="App">
             <Router>
             <Header />
-            <NavBar />
+            <NavBar updateUser={this.updateUser}/>
             <br />
             <div >
             <Switch>

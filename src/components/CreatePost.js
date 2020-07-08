@@ -1,13 +1,13 @@
 // src/PostBar.js
 import React from 'react';
 import '../styles/CreatePost.css'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 
 class CreatePost extends React.Component {
   render() {
 	let {subject, body, picture} = this.props.newPost
-    return (     
+    return (
 <div className="container" id="my-form">
 	<div className="d-flex justify-content-center h-100">
 		<div className="card">
@@ -45,5 +45,5 @@ class CreatePost extends React.Component {
     );
   }
 }
- 
+
 export default CreatePost;

@@ -3,7 +3,7 @@ import Search from '../components/Search'
 
 
 
-const URL = "http://localhost:3000/api/v1/profile"
+// const URL = "http://localhost:3000/api/v1/profile"
 
 export default class SearchContainer extends Component {
 
@@ -19,7 +19,7 @@ export default class SearchContainer extends Component {
         return (
             <div>
             <Search/>
-            
+
             </div>
         )
     }

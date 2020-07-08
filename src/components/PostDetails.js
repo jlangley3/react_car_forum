@@ -31,7 +31,7 @@ class PostDetails extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let newCom = this.state.currentPost.comments
+        // let newCom = this.state.currentPost.comments
         console.log("adding comment")
         fetch(URL + "/comments", {
             method: "POST",
@@ -79,7 +79,7 @@ class PostDetails extends React.Component {
     render() {
         let {picture, subject, body, comments} = this.state.currentPost
         return (<div className="container-banner" ><h1>{subject}</h1>
-            <img className="row" src={picture} alt="Car Picture Here"/>
+            <img className="row" src={picture} alt="Car Here"/>
             <form onSubmit={this.handleSubmit} className="card-c">
             <h1>add comment</h1>
             <div>

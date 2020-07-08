@@ -3,7 +3,7 @@ import React from 'react';
 import "../styles/Comments.css"
 
 
-const URL = "http://localhost:3000" 
+const URL = "http://localhost:3000"
 
 
 class Comments extends React.Component {
@@ -16,7 +16,7 @@ class Comments extends React.Component {
 
    handleSubmit = (event) => {
     event.preventDefault();
-    
+
     console.log("editing comment")
     fetch(URL + "/comments/"+ this.props.comment.id,{
         method: "PATCH",
@@ -34,7 +34,7 @@ class Comments extends React.Component {
             commentBody: this.state.commentBody,
             commentPicture: this.state.commentPicture
         }))
-      
+
 }
 
 handleChange = (event) => {
@@ -50,10 +50,10 @@ handleToggle = () => {
     })
 }
       render() {
-    
+
         return <div className="container" >
         <div className="card">
-          <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card image"/>
+          <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card graphic"/>
       <p>{this.props.comment.body}</p>
       <button onClick={this.handleToggle}>EDIT Comment</button>
       {this.state.formToggle ? <form onSubmit={this.handleSubmit} className="card-c">
@@ -66,14 +66,14 @@ handleToggle = () => {
             </div>
             <input type="submit" value="submit" />
             </form> : null}
-      
+
       <br />
       <button onClick={() => this.props.delete(this.props.comment)}>DELETE</button>
       </div>
       </div>
       }
     }
- 
+
 export default Comments;
 
 
