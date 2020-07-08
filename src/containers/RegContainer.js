@@ -37,6 +37,7 @@ export default class RegContainer extends Component {
              )
          })
          .then(resp => resp.json())
+         .then( data => {this.props.updateUser(data)})
         //  .then(data => {
         //      console.log(this.state.username, this.state.password, data)
         //      let {username, password} = this.state
@@ -55,7 +56,7 @@ export default class RegContainer extends Component {
         //     localStorage.setItem('jwt', data.token)
         //     this.props.updateUser(data.user)
         // })
-        .then(x => {
+        .then(() => {
             this.setState({
                 username: "",
                 firstName: "",

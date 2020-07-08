@@ -49,7 +49,7 @@ class App extends React.Component {
             <div className="App">
             <Router>
             <Header />
-            <NavBar updateUser={this.updateUser}/>
+            <NavBar updateUser={this.updateUser} currentUser={this.state.currentUser}/>
             <br />
             <div >
             <Switch>
@@ -64,17 +64,32 @@ class App extends React.Component {
                     <Redirect to="/profile"/> :
                 <LoginContainer updateUser={this.updateUser}/>
           } />
-
-
                 <Route exact path="/register" render={ () => <RegContainer updateUser={this.updateUser} />}/>
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/search" component={SearchContainer}/>
-                <Route exact path="/dm" component={DMContainer}/>
-                <Route exact path="/my_messages" component={DM} />
-                <Route path={`/posts/:postId`} component={PostDetails} />
-                <Route exact path="/posts" component={PostContainer}/>
-                <Route exact path="/profile" component={Profile}/>
-                <Route exact path="/" render={() => <Redirect to="/login" />} />
+
+
+
+                <Route exact path="/dm" render={ () =>
+                    this.state.currentUser ?
+                        <DMContainer currentUser={this.state.currentUser} />
+                        :
+                        <Redirect to="/login" />}/>
+                <Route exact path="/my_messages" render={ () =>
+                    this.state.currentUser ?
+                        <DM currentUser={this.state.currentUser} />
+                        :
+                        <Redirect to="/login" />}/>
+                <Route path={`/posts/:postId`} render={ () =>
+                    this.state.currentUser ?
+                        <PostDetails currentUser={this.state.currentUser} />
+                        :
+                        <Redirect to="/login" />}/>
+                <Route exact path="/posts" render={ () =>
+                    this.state.currentUser ?
+                        <PostContainer currentUser={this.state.currentUser} />
+                        :
+                        <Redirect to="/login" />}/>
 
                 <Route path="*" component={LoginContainer}/>
             </Switch>

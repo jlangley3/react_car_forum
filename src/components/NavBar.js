@@ -37,14 +37,14 @@ class NavBar extends React.Component {
             color: 'limegreen'
           }}
         >Login</NavLink>
-         <NavLink
+         {this.props.currentUser ? <NavLink
           to="/dm"
           exact
           className="fa fa-fw fa-envelope"
           activeStyle={{
             color: 'limegreen'
           }}
-        >DM</NavLink>
+        >DM</NavLink> : null }
           <NavLink
           to="/register"
           exact
@@ -61,15 +61,15 @@ class NavBar extends React.Component {
             color: 'limegreen'
           }}
         >Search</NavLink>
-         <NavLink
+         {this.props.currentUser ? <NavLink
           to="/posts"
           exact
           className="fa fa-fw fa-xing"
           activeStyle={{
             color: 'limegreen'
           }}
-        >Forum</NavLink>
-        <NavLink to="/login" exact onClick={this.handleLogout} className="fa fa-fw fa-xing"> Logout </NavLink>
+        >Forum</NavLink> : null }
+        {this.props.currentUser ? <NavLink to="/login" exact onClick={this.handleLogout} className="fa fa-fw fa-xing"> Logout </NavLink> : null }
 
       </div>
     )

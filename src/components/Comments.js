@@ -24,7 +24,6 @@ class Comments extends React.Component {
         body: JSON.stringify({
             body: this.state.commentBody,
             picture: this.state.commentPicture,
-
         })
     })
     .then(resp => resp.json())
