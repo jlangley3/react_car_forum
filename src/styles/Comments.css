@@ -1,3 +1,25 @@
+.container-banner{
+    background-color: whitesmoke;
+    text-align: center;
+    border-style: hidden;
+    border-radius: 15px;
+    font-family: 'Ruda', sans-serif;
+}
+
+#profilepic{
+    border-radius: 85px;
+    padding-top: 7px;
+}
+
+.container-about{
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem;
+    border-style: hidden;
+    padding: 2rem; 
+    text-align: center;
+    color: whitesmoke
+}
+
 
 
 

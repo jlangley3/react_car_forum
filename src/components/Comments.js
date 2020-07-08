@@ -2,13 +2,14 @@
 import React from 'react';
 import "../styles/Comments.css"
 
+
 const URL = "http://localhost:3000/comments" 
 
 
 class Comments extends React.Component {
    
       render() {
-      console.log(this.props.comment)
+    
         return <div className="container" >
         <div className="card">
           <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card image"/>

@@ -2,26 +2,52 @@
 
 
 .container-d{
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-height: 100%;
-align-content: center;
-padding-top: 2rem;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    height: 100%;
+    align-content: center;
+    padding-top: 2rem;
+    color: whitesmoke
+    }
+
+.card-c{
+    position: center;
+    border: center;
+    border-top: rgba(0,0,0,0.5);
+    height: fit-content;
+    /* min-height: 20rem; */
+    margin-left: 25rem;
+    margin-bottom: auto;
+    width: fit-content;
+    min-width: 30rem;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem;
+    color: whitesmoke;
     
+    }
+
+.container-banner{
+    background-color: whitesmoke;
+    text-align: center;
+    border-style: hidden;
+    border-radius: 15px;
+    font-family: 'Ruda', sans-serif;
 }
 
-.card-d{
-height: fit-content;
-/* min-height: 20rem; */
-margin-top: auto;
-margin-bottom: auto;
-width: fit-content;
-background-color: rgba(0,0,0,0.5) !important;
-border-radius: 1rem;
-color: whitesmoke
+#profilepic{
+    border-radius: 85px;
+    padding-top: 7px;
 }
 
+.container-about{
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem;
+    border-style: hidden;
+    padding: 2rem; 
+    text-align: center;
+    color: whitesmoke
+}
 
 .card-header-d h3{
     color: white;
@@ -31,7 +57,7 @@ color: whitesmoke
   
     .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
+    background-color: whitesmoke;
     color: black;
     border:0 !important;
     }
@@ -48,13 +74,12 @@ color: whitesmoke
     
     .remember input
     {
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    margin-right: 5px;
+    width: 30rem;
+    height: 30rem;
+    
     }
     
-    .login_btn{
+    button{
     color: black;
     background-color: #FFC312;
     width: 6rem;
@@ -62,7 +87,7 @@ color: whitesmoke
     font-weight: bold;
     }
     
-    .login_btn:hover{
+    button:hover{
     color: black;
     background-color: whitesmoke;
     }
@@ -73,4 +98,19 @@ color: whitesmoke
     
     .links a{
     margin-left: 4px;
+    }
+
+    .row {
+        max-block-size: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .container-banner{
+        background-color: whitesmoke;
+        text-align: center;
+        border-style: hidden;
+        border-radius: 15px;
+        font-family: 'Ruda', sans-serif;
     }

@@ -17,7 +17,8 @@
     flex-wrap: wrap;
     position: center;
     width: 20rem;
-    padding: .5rem
+    padding: .5rem;
+    color: whitesmoke;
     /* padding-left: 5rem;
     padding-right: 5rem; */
 }
@@ -48,19 +49,28 @@
     margin-top: 1rem;
     margin-bottom: auto;
     margin-left: 2rem;
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: black !important;
     /* border-radius: 1rem; */
 }
- button {
-     position: center;
-     width: fit-content;
-     height: fit-content;
-     padding: 1rem;
-     margin: 1rem 1rem 1rem 1rem;
-     background: #FFC312;
-     text-decoration: none;
-     color: black;
-     font-weight: bold;
-     border-radius: 1rem;
- }
+
+button {
+    color: black;
+    background-color: greenyellow;
+    width: auto;
+    border-radius: 1rem;
+    font-weight: bold;
+    }
+            
+    button:hover{
+    color: black;
+    background-color: whitesmoke;
+    }
+
+    .container-banner{
+        background-color: whitesmoke;
+        text-align: center;
+        border-style: hidden;
+        border-radius: 15px;
+        font-family: 'Ruda', sans-serif;
+    }
 

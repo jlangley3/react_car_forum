@@ -74,16 +74,14 @@ class PostDetails extends React.Component {
 
     render() {
         let {picture, subject, body, comments} = this.state.currentPost
-        return (<div><h1>{subject}</h1>
+        return (<div className="container-banner" ><h1>{subject}</h1>
             <img className="row" src={picture} alt="Car Picture Here"/>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="card-c">
             <h1>add comment</h1>
             <div>
-            <input onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
+            <input className="remember" onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
             <label htmlFor="comment">comment</label>
-            </div>
-            <div>
-            <input onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
+            <input className="remember" onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
             <label htmlFor="picture">picture</label>
             </div>
             <input type="submit" value="submit" />

@@ -10,7 +10,7 @@ class Login extends React.Component {
     return (     
 <div className="container">
 	<div className="d-flex justify-content-center h-100">
-		<div className="card-d">
+		<div className="card">
 			<div className="card-header">
 				<h3>Sign In</h3>
 			</div>

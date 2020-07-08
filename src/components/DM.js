@@ -2,6 +2,7 @@ import React from 'react'
 // import { NavLink } from 'react-router-dom';
 import '../styles/DM.css'
 
+
 const URL = "http://localhost:3000/messages/new"
 
 export default class DM extends React.Component {

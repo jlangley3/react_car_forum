@@ -3,7 +3,7 @@
     uifaces.com (http://uifaces.com/authorized)
 */
 
-#login { display: none; }
+/* #login { display: none; }
 .login,
 .logout { 
     position: absolute; 
@@ -88,4 +88,21 @@ input[type="file"]{
     border-radius: 50px;
     cursor: pointer;
 }
-.custom-input-file:hover .uploadPhoto { display: block; }
+.custom-input-file:hover .uploadPhoto { display: block; } */
+
+button {
+    color: black;
+    background-color: greenyellow;
+    width: auto;
+    border-radius: 1rem;
+    font-weight: bold;
+    }
+            
+    button:hover{
+    color: black;
+    background-color: whitesmoke;
+    }
+
+    button:active {
+        background-color: whitesmoke;
+    }

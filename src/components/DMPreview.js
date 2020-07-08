@@ -30,7 +30,7 @@ export default class DMPreview extends React.Component {
       console.log(this.props)
       let {friend, friendID, user, userID} = this.props
       return (
-          <div>
+          <div className="container-banner">
           <br/>
       <div className="container">
         <button onClick={this.handleClick}> conversation between {user} and {friend} </button>

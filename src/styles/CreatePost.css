@@ -39,6 +39,17 @@ width: 15rem;
 min-width: 15rem;
 max-width: 15rem;
 }
- button {
-     position: center;
- }
+button {
+ 
+color: black;
+background-color: greenyellow;
+width: auto;
+border-radius: 1rem;
+font-weight: bold;
+}
+        
+button:hover{
+color: black;
+background-color: whitesmoke;
+}
+ 

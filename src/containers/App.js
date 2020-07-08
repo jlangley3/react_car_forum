@@ -9,9 +9,10 @@ import DMContainer from '../containers/DMContainer';
 import LoginContainer from '../containers/LoginContainer'
 import RegContainer from '../containers/RegContainer'
 import SearchContainer from './SearchContainer';
-import Comments from '../components/Comments';
+import Profile from '../components/Profile';
 import PostDetails from '../components/PostDetails';
-import DM from '../components/DM'
+import DM from '../components/DM';
+import Header from '../components/Header';
 
 // import redVette from '../images/redVette.jpg'
 
@@ -21,7 +22,9 @@ class App extends React.Component {
      return (
     <div className="App">
       <Router>
+      <Header />
         <NavBar />
+        <br />
         <div >
           <Switch>
             <Route exact path="/login" component={LoginContainer}/>
@@ -32,6 +35,7 @@ class App extends React.Component {
             <Route exact path="/my_messages" component={DM} />
             <Route path={`/posts/:postId`} component={PostDetails} />
             <Route exact path="/posts" component={PostContainer}/>
+            <Route exact path="/profile" component={Profile}/>
             <Route exact path="/" render={() => <Redirect to="/login" />} />
 
             <Route path="*" component={LoginContainer}/>

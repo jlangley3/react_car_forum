@@ -5,15 +5,12 @@
     text-transform: uppercase;
     border-style: solid;
     margin:auto;
-    border-radius: 15px;
+    border-radius: 1rem;
 }
 
-.navbar{
-    background-color: rgba(0,0,0,0.5) !important;
-    border-radius: 1rem;
+#home{
+    background-color: black !important;
     border-style: hidden;
-    padding-right: 9rem; 
-    padding-left: 9rem; 
     text-align: center;
     width: auto;
     position: sticky;
@@ -22,21 +19,10 @@
     border-radius: 1rem;
 }
 
-.navbar .fa{
-    color: whitesmoke;
-    font-size: 1.2rem;
-    border-style: ridge;
-    border-color: black;
-    border-width: .1rem;
-   
-  
-}
-.navbar .fa:hover{
+#home:hover{
     background-color: #7c7e80;
     border-style: solid;
-    border-radius: 10rem;
-    color: rgb(255, 254, 253); 
-    transform: scale(1.5);
+    color: rgb(255, 254, 253);
 }
 
 
@@ -48,6 +34,10 @@
     font-family: 'Ruda', sans-serif;
 }
 
+#profilepic{
+    border-radius: 85px;
+    padding-top: 7px;
+}
 
 .container-about{
     background-color: rgba(0,0,0,0.5) !important;
@@ -66,6 +56,10 @@
   
 
 }
+.container-about>h1{
+    font-family: 'Ruda', sans-serif;
+}
+
 
 .projects{
     background-color: rgb(255, 255, 255);
@@ -104,35 +98,33 @@
     font-family: 'Slabo 27px', serif;
 }
 
-.nav {
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: 'Numans', sans-serif;
-    height: fit-content;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5) !important;
-    border-radius: 1rem;
+.container-1{
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 16px;
+   
+     
 }
-/* .link {
-    width: fit-content;
-    height: fit-content;
-    padding: 1rem;
-    margin: 1rem 1rem 1rem 1rem;
-    background: #FFC312;
+
+#contactimg{
+    border-style: hidden;
+    background-color: #f1f1f1;
+    border-radius: 90px;
+}
+
+.container-1 > a{
+    padding-left: 5px;
+    font-size: 22px;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 1rem;
+    
+}
+span:hover{
+    text-decoration: none;
+    transform: scale(1.5);
+    
 }
 
-.link:hover {
-    color: black;
-    background-color:whitesmoke;
-    }
 
-    .link:active {
-        background-color:darkorange;
-    } */
+
+

@@ -2,35 +2,33 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 
-.container{
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-align-content: center;
+    .container{
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    align-content: center;
+    }
 
-/* background-color: black; */
-/* background-image: url(../images/redVette.jpg); */
-}
+    .card{
+    position: center;
+    border: center;
+    border-top: rgba(0,0,0,0.5);
+    height: fit-content;
+    /* min-height: 20rem; */
+    margin-top: 6rem;
+    margin-bottom: auto;
+    width: fit-content;
+    min-width: 30rem;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 1rem;
+    color: whitesmoke;
 
-.card{
-position: center;
-border: center;
-border-top: rgba(0,0,0,0.5);
-height: fit-content;
-/* min-height: 20rem; */
-margin-top: 6rem;
-margin-bottom: auto;
-width: fit-content;
-min-width: 30rem;
-background-color: rgba(0,0,0,0.5) !important;
-/* border-radius: 1rem; */
-
-}
+    }
 
 
     .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
+    background-color: greenyellow;
     color: black;
     border:0 !important;
     }
@@ -55,7 +53,7 @@ background-color: rgba(0,0,0,0.5) !important;
     
     .login_btn{
     color: black;
-    background-color: #FFC312;
+    background-color: greenyellow;
     width: 6rem;
     border-radius: 1rem;
     font-weight: bold;
@@ -67,7 +65,7 @@ background-color: rgba(0,0,0,0.5) !important;
     }
     
     .links{
-    color: whitesmoke;
+    color: limegreen;
     }
     
     .links a{
