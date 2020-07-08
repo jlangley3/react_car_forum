@@ -45,6 +45,8 @@ export default class DMContainer extends Component {
         .then(data => {
             let removedSelf = data.filter(u => u.id != this.props.currentUser.id)
             // you cannot send a message to yourself! this isn't Slack.
+            // we should remove people with whom you already have a message
+
             this.setState({
                 users: removedSelf
             })

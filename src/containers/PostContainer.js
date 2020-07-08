@@ -3,7 +3,7 @@ import Posts from '../components/Posts'
 // import PostDetails from '../components/PostDetails'
 import CreatePost from '../components/CreatePost'
 // import Comments from '../components/Comments'
-// import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Route } from 'react-router-dom';
 import PostsList from '../components/PostsList';
 
@@ -11,24 +11,22 @@ const URL = "http://localhost:3000/posts"
 
 export default class PostContainer extends Component {
 
-            constructor(){
+    constructor(){
         super();
         this.state= {
             postsArray: [],
             subject: "",
             body: "",
-            picture: "",
-            user_id: 4
+            picture: ""
          }
                     }
 
+    componentDidMount() {
+        this.fetchPosts()
+    }
 
-        componentDidMount() {
-            this.testFetch()
-        }
-
-        testFetch = () => {
-         console.log("You made it!")
+    fetchPosts = () => {
+         console.log("FETCHING POSTS!!")
          fetch(URL)
          .then(resp => resp.json())
          .then(postData => {
@@ -40,71 +38,82 @@ export default class PostContainer extends Component {
              })
          })
      }
-          handleChange = (event) => {
-              console.log("handle Change")
-              this.setState({
-                  [event.target.name]: event.target.value
-              })
-          }
-          handleSubmit = (event) => {
-              console.log("handle submit")
-              event.preventDefault()
-              this.addFetch()
-          }
-
-          addFetch = () => {
-            console.log("You made it!")
-            let {subject, body, picture} = this.state
-            fetch(URL, {
-                method: "POST",
-                headers: {"Content-Type": "application/json", "Accept": "application/json"},
-                body: JSON.stringify({
-                      subject: subject,
-                      body: body,
-                      picture: picture,
-                      user_id: 4
-                   }
-                )
-            })
-            .then(resp => resp.json())
-            .then(newPost =>
-                this.setState({
-                        body: "",
-                        subject: "",
-                        picture: "",
-                        postsArray: [newPost, ...this.state.postsArray]
-                }))
-        }
-
-        handleDelete = (post) => {
-            console.log("Delete")
-            fetch(URL + "/" + post.id, {
-                method: "DELETE"
-            })
-            .then(resp => resp.json())
-            .then(data => {console.log(data);
-            let newArray = this.state.postsArray.filter(p => p.id !== post.id)
-            this.setState({
-                postsArray: newArray
-            })
+    handleChange = (event) => {
+        console.log("handle Change")
+        this.setState({
+            [event.target.name]: event.target.value
         })
-        }
+    }
+
+    handleSubmit = (event) => {
+        console.log("handle submit")
+        event.preventDefault()
+        this.addFetch()
+    }
+
+    addFetch = () => {
+        console.log("You made it!")
+        let {subject, body, picture} = this.state
+        fetch(URL, {
+            method: "POST",
+            headers: {"Content-Type": "application/json", "Accept": "application/json"},
+            body: JSON.stringify({
+                  subject: subject,
+                  body: body,
+                  picture: picture,
+                  user_id: 4
+               }
+            )
+        })
+        .then(resp => resp.json())
+        .then(newPost =>
+            this.setState({
+                    body: "",
+                    subject: "",
+                    picture: "",
+                    postsArray: [newPost, ...this.state.postsArray]
+            }))
+    }
+
+    handleDelete = (post) => {
+        console.log("Delete")
+        fetch(URL + "/" + post.id, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then(data => {console.log(data);
+        let newArray = this.state.postsArray.filter(p => p.id !== post.id)
+        this.setState({
+            postsArray: newArray
+        })
+    })
+    }
 
         render() {
             let {match}= this.props
+            console.log("PC" ,this.props)
        return (
            <div>
-               <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
-               <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
-
+                <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
+                <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
                 <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
-
                 <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
+
            </div>
        )
 
     }
 }
+
+
+ // <div>
+ //     <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
+ //     <PostsList posts={this.state.postsArray} delete={this.handleDelete}/>
+ //
+ //      <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
+ //
+ //      <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
+ // </div>
 
 
 

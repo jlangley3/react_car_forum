@@ -69,7 +69,6 @@ class App extends React.Component {
                 <Route exact path="/search" component={SearchContainer}/>
 
 
-
                 <Route exact path="/dm" render={ () =>
                     this.state.currentUser ?
                         <DMContainer currentUser={this.state.currentUser} />
@@ -80,14 +79,21 @@ class App extends React.Component {
                         <DM currentUser={this.state.currentUser} />
                         :
                         <Redirect to="/login" />}/>
-                <Route path={`/posts/:postId`} render={ () =>
+                <Route path={`/posts/:postId`} render={ routerProps =>
                     this.state.currentUser ?
-                        <PostDetails currentUser={this.state.currentUser} />
+                        <PostDetails {...routerProps} currentUser={this.state.currentUser}  />
                         :
                         <Redirect to="/login" />}/>
-                <Route exact path="/posts" render={ () =>
+
+{/* <Route exact path="/" render={() => <div>Home</div>} />
+    <Route path='/movies' render={routerProps => <MoviesPage {...routerProps}
+    movies={this.state.movies}/>} />} */}
+
+
+
+                <Route exact path="/posts" render={ (routerProps) =>
                     this.state.currentUser ?
-                        <PostContainer currentUser={this.state.currentUser} />
+                        <PostContainer {...routerProps} currentUser={this.state.currentUser} />
                         :
                         <Redirect to="/login" />}/>
 
