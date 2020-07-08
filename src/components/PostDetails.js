@@ -8,7 +8,7 @@ const URL = "http://localhost:3000"
 class PostDetails extends React.Component {
 
     state= {
-        currentPost: {
+        currentPost:  {
             comments:[]
         },
         body: "",
@@ -16,13 +16,18 @@ class PostDetails extends React.Component {
     }
 
     componentDidMount() {
+       this.fetchPostData()
+    }
+
+
+      fetchPostData =() => {
         console.log("fetching post details")
         fetch(URL + this.props.location.pathname)
         .then(resp => resp.json())
         .then(data => this.setState({
             currentPost: data
         }))
-    }
+      }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -39,13 +44,12 @@ class PostDetails extends React.Component {
             })
         })
         .then(resp => resp.json())
-        .then(data => this.setState({
+        .then(data => {this.fetchPostData();
+          this.setState({
             body: "",
             picture: "",
-            currentPost: {
-                comments: [data,...newCom]
-            }
-        }))
+        })}
+          )
     }
 
     handleChange = (event) => {
