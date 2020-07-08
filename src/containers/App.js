@@ -66,7 +66,7 @@ class App extends React.Component {
           } />
 
 
-                <Route exact path="/register" component={RegContainer}/>
+                <Route exact path="/register" render={ () => <RegContainer updateUser={this.updateUser} />}/>
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/search" component={SearchContainer}/>
                 <Route exact path="/dm" component={DMContainer}/>
