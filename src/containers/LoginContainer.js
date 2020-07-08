@@ -13,58 +13,45 @@ export default class LoginContainer extends Component {
             password: ""
 
         }
- }
+    }
 
-     testFetch = () => {
-         console.log("You made it!")
-         let {username, password} = this.state
-         fetch(URL, {
-             method: "POST",
-             headers: {"Content-Type": "application/json", "Accept": "application/json"},
-             body: JSON.stringify({
-                   username: username,
-                   password: password
-                }
-             )
-         })
-         .then(resp => resp.json())
-         .then(console.log)
-     }
-
-
-     handleChange = (event) => {
+    handleChange = (event) => {
         this.setState({
-          [event.target.name]: event.target.value
+            [event.target.name]: event.target.value
         })
-      }
+    }
 
-      handleSubmit = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         console.log("Login stuff", event.target)
-    //    this.testFetch()
-        let {username, password} = this.state
+
+        //let {username, password} = this.state
         fetch(URL, {
             method: "POST",
             headers: {"Content-Type": "application/json", "Accept": "application/json"},
-            body: JSON.stringify({
-                  username: username,
-                  "password_digest": password
-               }
-            )
-        })
-        .then(resp => resp.json())
-        .then(console.log)
-      }
+            body: JSON.stringify(this.state)
+    })
+    .then(resp => resp.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.message)
+        } else {
+            localStorage.setItem('jwt', data.token)
+            this.props.updateUser(data.user_data)
+        }
 
-        render() {
-       return (
-           <div>
-            <Login submit={this.handleSubmit} handleChange={this.handleChange} newUser={this.state}/>
-           </div>
-       )
+    })
+}
+
+render() {
+    return (
+        <div>
+        <Login submit={this.handleSubmit} handleChange={this.handleChange} newUser={this.state}/>
+        </div>
+    )
 
 
 
 
-    }
+}
 }
