@@ -21,16 +21,17 @@ export default class DMPreview extends React.Component {
     render() {
         // console.log("DM PREVIEW PROPS!", this.props)
         // let {friend, friendID, user, userID} = this.props.dm
-        console.log("PREVIEW INFO", this.props.dm.id, this.props.dm.friend_id, this.props.dm.user_id)
+        console.log("PREVIEW INFO", this.props)
         return (
             <div className="container-banner">
             <br/>
             <div className="container">
-            <button onClick={this.handleClick}> conversation between {this.props.dm.friend.first_name} and {this.props.dm.user.first_name} </button>
+            <button onClick={this.handleClick}> conversation between {this.props.dm.friend.username} and {this.props.dm.user.username} </button>
             {this.state.toggle ? <DM currentUser={this.props.currentUser} dm={this.props.dm} /> : null }
 
             </div>
-            </div>)
+            </div>
+            )
         }
     }
     //{this.state.toggle ? <DM user={userID} friend={friendID} /> : null }

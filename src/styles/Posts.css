@@ -1,76 +1,31 @@
 
-
-.post-div {
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-    max-width: 15rem;
-    text-overflow: unset;
-    align-content: center;
-    background-color: black;
-    color: whitesmoke
-}
-
-
-.card-deck {
-    display: inline-block;
-    flex-wrap: wrap;
+.card-img-top {
+    width: 18rem;
     position: center;
-    width: 20rem;
-    padding: .5rem;
-    color: whitesmoke;
-    /* padding-left: 5rem;
-    padding-right: 5rem; */
+    border-radius: 1rem;
 }
 
-.card img {
-    height: 10rem;
-    width: 10rem;
-    position: center;
-    width: auto;
-    max-width: 15rem;
-    max-height: 15rem;
-    padding-bottom: 1rem;
-    padding-left: 4rem;
-    display: flex;
-    /* border-radius: 1rem; */
-}
-
-.card-b {
-    width: 15rem;
-    display: flex;
-    min-width: 15rem;
-    max-width: 15rem;
-    position: center;
-    border: center;
-    border-top: rgba(0,0,0,0.5);
-    height: fit-content;
-    /* min-height: 20rem; */
-    margin-top: 1rem;
-    margin-bottom: auto;
-    margin-left: 2rem;
-    background-color: black !important;
-    /* border-radius: 1rem; */
-}
-
-button {
+.btn {
     color: black;
-    background-color: greenyellow;
+    background-color: limegreen;
     width: auto;
     border-radius: 1rem;
     font-weight: bold;
-    }
-            
-    button:hover{
-    color: black;
+    border-color:limegreen;
+}
+
+.btn:hover {
+    border-color: limegreen;
     background-color: whitesmoke;
-    }
+    color: black;
+}
 
-    .container-banner{
-        background-color: whitesmoke;
-        text-align: center;
-        border-style: hidden;
-        border-radius: 15px;
-        font-family: 'Ruda', sans-serif;
-    }
+.btn-primary {
+    margin-right: 20rem;
+}
 
+.card {
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 1rem;
+}

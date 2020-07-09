@@ -1,55 +1,8 @@
-#my-form {
-    min-width: 30rem;
-}
-.post-div {
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-    max-width: 15rem;
-    text-overflow: unset;
-    align-content: center;
-    background-color: black;
-    color: whitesmoke
-}
 
+ .c {
+     width: 50rem;
+ }
 
-.card-deck {
-    display: inline-block;
-    flex-wrap: wrap;
-    position: center;
-    /* padding-left: 5rem;
-    padding-right: 5rem; */
-
-
-}
-
-.card img {
-    height: 10rem;
-    width: 10rem;
-    position: center;
-    width: auto;
-    max-width: 15rem;
-    height: 15rem;
-    padding-bottom: 1rem;
-    /* border-radius: 1rem; */
-}
-
-.card {
-width: 15rem;
-min-width: 15rem;
-max-width: 15rem;
-}
-button {
- 
-color: black;
-background-color: greenyellow;
-width: auto;
-border-radius: 1rem;
-font-weight: bold;
-}
-        
-button:hover{
-color: black;
-background-color: whitesmoke;
-}
- 
+ /* .form-control {
+     height: 5rem
+ } */

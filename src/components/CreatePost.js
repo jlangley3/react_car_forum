@@ -10,7 +10,7 @@ class CreatePost extends React.Component {
     return (
 <div className="container" id="my-form">
 	<div className="d-flex justify-content-center h-100">
-		<div className="card">
+		<div className="card c">
 			<div className="card-header">
 				<h3>Add a post</h3>
 			</div>
@@ -20,16 +20,19 @@ class CreatePost extends React.Component {
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
 						</div>
+						<span className="input-group-text"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>
 						<input onChange={this.props.handleChange} name="subject" value={subject} type="text" className="form-control" placeholder="subject"/>
 					</div>
                     <div className="input-group form-group">
 						<div className="input-group-prepend">
 						</div>
-						<input onChange={this.props.handleChange} name="body" value={body} type="text" className="form-control" placeholder="Body of Post"/>
+						<span className="input-group-text"><i className="fa fa-comment"></i></span>
+						<input onChange={this.props.handleChange} name="body" value={body} type="text-field" className="form-control" placeholder="Body of Post"/>
 					</div>
 					<div className="input-group form-group">
 						<div className="input-group-prepend">
 						</div>
+						<span className="input-group-text"><i className="fa fa-picture-o"></i></span>
 						<input onChange={this.props.handleChange} name="picture" value={picture} type="text" className="form-control" placeholder="Image Address"/>
 					</div>
 					<div className="form-group">

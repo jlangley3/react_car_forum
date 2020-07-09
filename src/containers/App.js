@@ -12,7 +12,7 @@ import SearchContainer from './SearchContainer';
 import Profile from '../components/Profile';
 import PostDetails from '../components/PostDetails';
 import DM from '../components/DM';
-import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 // import redVette from '../images/redVette.jpg'
 
@@ -48,7 +48,7 @@ class App extends React.Component {
         return (
             <div className="App">
             <Router>
-            <Header />
+            {/* <Header /> */}
             <NavBar updateUser={this.updateUser} currentUser={this.state.currentUser}/>
             <br />
             <div >
@@ -66,7 +66,7 @@ class App extends React.Component {
           } />
                 <Route exact path="/register" render={ () => <RegContainer updateUser={this.updateUser} />}/>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/search" component={SearchContainer}/>
+                {/* <Route exact path="/search" component={SearchContainer}/> */}
 
 
                 <Route exact path="/dm" render={ () =>
@@ -94,6 +94,7 @@ class App extends React.Component {
                 <Route path="*" component={LoginContainer}/>
             </Switch>
             </div>
+            <Footer />
             </Router>
             </div>
         );

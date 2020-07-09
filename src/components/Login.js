@@ -10,7 +10,7 @@ class Login extends React.Component {
         return (
             <div className="container">
             	<div className="d-flex justify-content-center h-100">
-            		<div className="card">
+            		<div className="card b">
             			<div className="card-header">
             				<h3>Sign In</h3>
             			</div>
@@ -41,9 +41,10 @@ class Login extends React.Component {
             			</div>
             			<div className="card-footer">
             				<div className="d-flex justify-content-center links">
-            					Don't have an account?<NavLink
+            					Don't have an account? &nbsp;<NavLink
             										to="/register"
-            										exact
+													exact
+													className="reg"
             										>Register</NavLink>
             				</div>
             			</div>

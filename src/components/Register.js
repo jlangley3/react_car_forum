@@ -11,7 +11,7 @@ class Register extends React.Component {
         return (
             <div className="container">
             	<div className="d-flex justify-content-center h-100">
-            		<div className="card">
+            		<div className="card b">
             			<div className="card-header">
             				<h3>Register</h3>
             			</div>

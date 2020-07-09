@@ -1,18 +1,8 @@
-.header-h1{
-    color: antiquewhite;
-    font-family: 'Roboto Condensed', sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    border-style: solid;
-    margin:auto;
-    border-radius: 15px;
-}
-
 .navbar{
     background-color: rgba(0,0,0,0.5) !important;
     border-radius: 1rem;
     border-style: hidden;
-    padding-right: 9rem; 
+    padding-right: 1rem; 
     padding-left: 9rem; 
     text-align: center;
     width: auto;
@@ -22,117 +12,68 @@
     border-radius: 1rem;
 }
 
+.footer {
+    
+    border-style: hidden;
+    height: 2rem;
+    font-size: 0.6rem;
+    border-radius: 1rem;
+    position: static;
+    width: 100%;
+    padding-bottom: 2.5rem; 
+}
+
+
 .navbar .fa{
     color: whitesmoke;
     font-size: 1.2rem;
-    border-style: ridge;
+    border-style: hidden;
     border-color: black;
-    border-width: .1rem;
+    border-width: .05rem;
+    margin-left: 4rem;
+    /* color: black */
    
-  
 }
 .navbar .fa:hover{
-    background-color: #7c7e80;
+    /* background-color: black; */
     border-style: solid;
-    border-radius: 10rem;
+    border-color: limegreen;
+    border-radius: 0.2rem;
     color: rgb(255, 254, 253); 
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
-
-.container-banner{
-    background-color: whitesmoke;
-    text-align: center;
+#imgthumbnail{
     border-style: hidden;
-    border-radius: 15px;
-    font-family: 'Ruda', sans-serif;
+    background-color: #f1f1f1;
+    border-radius: 90px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 15px;
 }
 
-
-.container-about{
-    background-color: rgba(0,0,0,0.5) !important;
-    border-radius: 1rem;
-    border-style: hidden;
-    padding: 2rem; 
-    text-align: center;
-    color: whitesmoke
-}
-
-.container-about>p{
-    font-family: 'Slabo 27px', serif;
-    font-size: 20px;
-    padding-right: 30px;
-    padding-left: 30px;
-  
-
-}
-
-.projects{
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    border-style: hidden;
-    padding: 18px; 
-    text-align: center;
-    
-}
-.projects h1{
-    font-family: 'Ruda', sans-serif;
-}
-
-.projects p{
-    font-family: 'Slabo 27px', serif;
-    font-size: 20px;
-}
-
-.container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly; 
-    flex-wrap: wrap;
-    
-}
-
-.container a{
-    padding-right: 10px;
+#car{
     text-decoration: none;
-  
-}
-
-.container p{
-    
-    color: black;
-    font-family: 'Slabo 27px', serif;
-}
-
-.nav {
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: 'Numans', sans-serif;
-    height: fit-content;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5) !important;
-    border-radius: 1rem;
-}
-/* .link {
-    width: fit-content;
-    height: fit-content;
-    padding: 1rem;
-    margin: 1rem 1rem 1rem 1rem;
-    background: #FFC312;
-    text-decoration: none;
-    color: black;
+    color: white;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 3rem;
     font-weight: bold;
-    border-radius: 1rem;
 }
 
-.link:hover {
-    color: black;
-    background-color:whitesmoke;
-    }
+#mailmelogo{
+    border-style: hidden;
+    border-radius:5px;
+    width:15px;
+    height:15px;
+    
+}
 
-    .link:active {
-        background-color:darkorange;
-    } */
+.reg {
+ color: limegreen;
+}
+
+.reg:hover {
+    color: limegreen;
+  
+}

@@ -56,17 +56,17 @@ handleToggle = () => {
         {this.props.comment.picture ?
           <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card graphic"/>
           : null }
-      <p>{this.props.comment.body}</p>
+      <p>Title: {this.props.comment.body}</p>
       <button onClick={this.handleToggle}>EDIT</button>
-      {this.state.formToggle ? <form onSubmit={this.handleSubmit} className="card-c">
-            <h1>add comment</h1>
+      {this.state.formToggle ? <form onSubmit={this.handleSubmit} className="card">
+            <h1>Add Comment</h1>
             <div>
             <input className="remember" onChange={this.handleChange} type="text" name="commentBody" placeholder="comment" value={this.state.commentBody}/>
             <label htmlFor="comment">comment</label>
             <input className="remember" onChange={this.handleChange} type="picture" name="commentPicture" placeholder="picture" value={this.state.commentPicture}/>
             <label htmlFor="picture">picture</label>
             </div>
-            <input type="submit" value="submit" />
+            <input className="btn" type="submit" value="submit" />
             </form> : null}
 
       <br />

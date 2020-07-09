@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import DMPreview from '../components/DMPreview'
-import '../styles/Main.css';
+import '../styles/DM.css';
 
 const URL = "http://localhost:3000/users/my_messages/"
 const userURL = "http://localhost:3000/users"
@@ -109,7 +109,7 @@ export default class DMContainer extends Component {
     render() {
 
         return (
-           <div className="projects">
+           <div className="container">
                <button onClick={this.handleToggle}>Add DM</button>
                {this.state.showForm ?
                 <div className="container">

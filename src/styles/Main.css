@@ -5,124 +5,22 @@
     text-transform: uppercase;
     border-style: solid;
     margin:auto;
-    border-radius: 1rem;
-}
-
-#home{
-    background-color: black !important;
-    border-style: hidden;
-    text-align: center;
-    width: auto;
-    position: sticky;
-    top:0;
-    z-index: 1;
-    border-radius: 1rem;
-}
-
-#home:hover{
-    background-color: #7c7e80;
-    border-style: solid;
-    color: rgb(255, 254, 253);
-}
-
-
-.container-banner{
-    background-color: whitesmoke;
-    text-align: center;
-    border-style: hidden;
     border-radius: 15px;
-    font-family: 'Ruda', sans-serif;
 }
 
 #profilepic{
-    border-radius: 85px;
-    padding-top: 7px;
+    border-radius: 10rem;
+    padding-top: 0.5rem;
+    width: auto;
 }
 
-.container-about{
-    background-color: rgba(0,0,0,0.5) !important;
-    border-radius: 1rem;
-    border-style: hidden;
-    padding: 2rem; 
+.container-banner{
+    background-color: black;
     text-align: center;
-    color: whitesmoke
-}
-
-.container-about>p{
-    font-family: 'Slabo 27px', serif;
-    font-size: 20px;
-    padding-right: 30px;
-    padding-left: 30px;
-  
-
-}
-.container-about>h1{
-    font-family: 'Ruda', sans-serif;
-}
-
-
-.projects{
-    background-color: rgb(255, 255, 255);
+    border-style: hidden;
     border-radius: 15px;
-    border-style: hidden;
-    padding: 18px; 
-    text-align: center;
-    
-}
-.projects h1{
     font-family: 'Ruda', sans-serif;
-}
-
-.projects p{
-    font-family: 'Slabo 27px', serif;
-    font-size: 20px;
-}
-
-.container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly; 
-    flex-wrap: wrap;
-    
-}
-
-.container a{
-    padding-right: 10px;
-    text-decoration: none;
-  
-}
-
-.container p{
-    
-    color: black;
-    font-family: 'Slabo 27px', serif;
-}
-
-.container-1{
-    color: #f1f1f1;
-    text-align: center;
-    font-family: 'Saira Semi Condensed', sans-serif;
-    font-size: 16px;
-   
-     
-}
-
-#contactimg{
-    border-style: hidden;
-    background-color: #f1f1f1;
-    border-radius: 90px;
-}
-
-.container-1 > a{
-    padding-left: 5px;
-    font-size: 22px;
-    text-decoration: none;
-    
-}
-span:hover{
-    text-decoration: none;
-    transform: scale(1.5);
-    
+    color: whitesmoke;
 }
 
 

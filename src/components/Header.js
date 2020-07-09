@@ -5,7 +5,8 @@ class Header extends Component {
     render() {
         return (
             <div id="home">   
-                <h1 className="header-h1">Car Max</h1>
+                <i class="fa fa-car fa-spin fa-3x" aria-hidden="true"></i>
+                 <span className="header-h1">Car Facts</span>
             </div>
         )
     }
