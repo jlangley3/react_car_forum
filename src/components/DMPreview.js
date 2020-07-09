@@ -23,12 +23,17 @@ export default class DMPreview extends React.Component {
         // let {friend, friendID, user, userID} = this.props.dm
         console.log("PREVIEW INFO", this.props)
         return (
+            <div>
             <div className="container-banner">
+                <h2><i class="fa fa-comment" aria-hidden="true"></i></h2>
             <br/>
-            <div className="container">
-            <button onClick={this.handleClick}> conversation between {this.props.dm.friend.username} and {this.props.dm.user.username} </button>
+            <div className="card g">
+            <span className="names"> Convo w/ {this.props.currentUser.username === this.props.dm.user.username ? this.props.dm.friend.username : this.props.dm.user.username} </span>
+            <button className="btn" onClick={this.handleClick}> Convo </button>
+            </div>
+             <div className="card g">
             {this.state.toggle ? <DM currentUser={this.props.currentUser} dm={this.props.dm} /> : null }
-
+             </div>
             </div>
             </div>
             )

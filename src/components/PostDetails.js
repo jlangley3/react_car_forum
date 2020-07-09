@@ -85,19 +85,33 @@ export default class PostDetails extends React.Component {
     render() {
         let {picture, subject, body, comments} = this.state.currentPost
         console.log("PICTURE", picture)
-        return (<div className="container-banner" ><h1>{subject}</h1>
+        return (<div><div className="card" ><h1><i class="fa fa-user" aria-hidden="true"></i>Subject: &nbsp;&nbsp;  {subject}</h1>
             <img className="row" src={picture} alt="Car Here"/>
-            <form onSubmit={this.handleSubmit} className="card-c">
-                <h1>add comment</h1>
+            </div>
+
+            <form onSubmit={this.handleSubmit} className="card">
+                <h1>Add a Comment</h1>
                 <div>
-                    <input className="remember" onChange={this.handleChange} type="text" name="body" placeholder="comment" value={this.state.body}/>
-                    <label htmlFor="comment">comment</label>
-                    <input className="remember" onChange={this.handleChange} type="picture" name="picture" placeholder="picture" value={this.state.picture}/>
-                    <label htmlFor="picture">picture</label>
-                </div>
-                <input type="submit" value="submit" />
+                <div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<span className="input-group-text"><i className="fa fa-comment"></i></span>
+						<input onChange={this.handleChange} name="body" value={this.state.body} type="text-field" className="form-control-com" placeholder="Body of Post"/>
+					</div>
+					<div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<span className="input-group-text"><i className="fa fa-picture-o"></i></span>
+						<input onChange={this.handleChange} name="picture" value={this.state.picture} type="text" className="form-control-com" placeholder="Image Address"/>
+					</div>
+					<div className="form-group">
+
+						<input type="submit" value="Post!" className="btn float-left login_btn"/>
+					</div>
+                    </div>
             </form>
-            <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment} delete={this.handleComDelete} experiment={this.fetchPostData}/>)}</div>
+            
+                <div>{this.state.currentPost.comments.map(comment => <Comments key={comment.id} comment={comment} delete={this.handleComDelete} experiment={this.fetchPostData}/>)}</div>
             </div>)
         }
     }

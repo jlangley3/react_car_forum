@@ -110,11 +110,11 @@ export default class DMContainer extends Component {
 
         return (
            <div className="container">
-               <button onClick={this.handleToggle}>Add DM</button>
+               <button className="btn" onClick={this.handleToggle}>Add DM</button>
                {this.state.showForm ?
-                <div className="container">
+                
             <div className="d-flex justify-content-center h-100">
-                <div className="card">
+                <div className="card convo">
                     <div className="card-header">
                         <h3>Create Message</h3>
                     </div>
@@ -130,7 +130,7 @@ export default class DMContainer extends Component {
                             <select name="cars" form="carform" className="custom-select" id="inputGroupSelect01" onChange={this.handleChange}>
                             {this.state.users.map(user => <option className="dropdown-item" value={user.username}>{user.username}</option>)}
                             </select>
-
+                 
                             <div className="form-group">
                                 <input type="submit" value="create" className="btn float-right login_btn"/>
                             </div>
@@ -138,7 +138,7 @@ export default class DMContainer extends Component {
                     </div>
                 </div>
             </div>
-        </div>
+        
 
                : null}
 

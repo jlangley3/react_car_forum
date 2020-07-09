@@ -1,0 +1,29 @@
+.names {
+    font-weight: bolder;
+    font-size: 1.7rem;
+
+}
+
+.g {
+    display:inline-block;
+    text-align: left;
+    margin-bottom: 1rem;
+    position: left;
+}
+
+.convo {
+    font-size: 1rem;
+    width: 45rem;
+    display:inline-block;
+    margin-bottom: 1rem;
+}
+.card {
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-bottom: 1rem;
+}
+
+
+

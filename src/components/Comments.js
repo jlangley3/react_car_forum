@@ -52,25 +52,37 @@ handleToggle = () => {
       render() {
 
         return <div className="container" >
-        <div className="card">
-        {this.props.comment.picture ?
-          <img className="card-img-top img-fluid" src={this.props.comment.picture} alt="Card graphic"/>
+        <div className="card com">
+        <span>{this.props.comment.body}</span>{this.props.comment.picture ?
+          <img className="img-fluid" src={this.props.comment.picture} alt="Card graphic"/>
           : null }
-      <p>Title: {this.props.comment.body}</p>
-      <button onClick={this.handleToggle}>EDIT</button>
+      
+      <button className="btn float-left login_btn" onClick={this.handleToggle}>EDIT</button>
       {this.state.formToggle ? <form onSubmit={this.handleSubmit} className="card">
-            <h1>Add Comment</h1>
-            <div>
-            <input className="remember" onChange={this.handleChange} type="text" name="commentBody" placeholder="comment" value={this.state.commentBody}/>
-            <label htmlFor="comment">comment</label>
-            <input className="remember" onChange={this.handleChange} type="picture" name="commentPicture" placeholder="picture" value={this.state.commentPicture}/>
-            <label htmlFor="picture">picture</label>
-            </div>
-            <input className="btn" type="submit" value="submit" />
-            </form> : null}
+      <h1>Edit Comment</h1>
+                <div>
+                <div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<span className="input-group-text"><i className="fa fa-comment"></i></span>
+						<input onChange={this.handleChange} name="commentBody" value={this.state.commentBody} type="text-field" className="form-control-com" placeholder="Body of Post"/>
+					</div>
+					<div className="input-group form-group">
+						<div className="input-group-prepend">
+						</div>
+						<span className="input-group-text"><i className="fa fa-picture-o"></i></span>
+						<input onChange={this.handleChange} name="commentPicture" value={this.state.commentPicture} type="text" className="form-control-com" placeholder="Image Address"/>
+					</div>
+					<div className="form-group">
+
+						<input type="submit" value="Post!" className="btn"/>
+					</div>
+                    </div>
+            </form>
+             : null}
 
       <br />
-      <button onClick={() => this.props.delete(this.props.comment)}>DELETE</button>
+      <button className="btn float-right" onClick={() => this.props.delete(this.props.comment)}>DELETE</button>
       </div>
       </div>
       }

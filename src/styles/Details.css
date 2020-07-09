@@ -1,3 +1,17 @@
 .b {
     width: 30rem;
 }
+
+.row{
+    max-width: 40rem;
+    position: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-left: 25%;
+}
+
+.form-control-com {
+    width: 60rem;
+    height: 3rem;
+    
+}
