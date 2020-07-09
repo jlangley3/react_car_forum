@@ -12,7 +12,7 @@ class Profile extends React.Component {
                 <div><img id="profilepic" src={defaultProfile}  width="170" height="170" alt="profilepic"/></div>
                 <h3>Welcome to your Car Facts profile.</h3>
                 <p id="paragarph1">
-                  <h2>BIO:</h2>
+                  
                 {this.props.currentUser.bio}</p>
 
         </section>

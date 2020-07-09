@@ -25,5 +25,15 @@
     margin-bottom: 1rem;
 }
 
+.self{
+    padding-left: 2rem;
+    color: limegreen;
+}
+
+.friend {
+    padding-left: 10rem;
+    color: cyan;
+}
+
 
 

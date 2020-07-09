@@ -39,7 +39,7 @@ export default class DM extends React.Component {
         let {user_id, friend_id, user, friend} = this.props.dm
         return (
           <div className="convo">
-               {this.state.remarks.map(r => <p key={r.id} > {r.user_id ===  user_id ? user.username : friend.username}: {r.body} </p>)}
+               {this.state.remarks.map(r => <p className={r.user_id ===  user_id ? "self" : "friend"} key={r.id} > {r.user_id ===  user_id ?  (user.username) : friend.username}: {r.body} </p>)}
                {/* style this for real css align based on speaker (like on a chat app) */}
                {/*if (r.user_id == this.props.currentUser.id) {
                    style in blue

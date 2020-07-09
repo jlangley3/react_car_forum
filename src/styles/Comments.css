@@ -17,6 +17,13 @@
     border-color: limegreen;
     background-color: whitesmoke;
     color: black;
+    border-color: limegreen;
+}
+
+.btn:active {
+    border-color: limegreen;
+    background-color: whitesmoke;
+    color: black;
 }
 
 .img-fluid {

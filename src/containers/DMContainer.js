@@ -94,7 +94,7 @@ export default class DMContainer extends Component {
             .then(dTwo => {
                 // console.log("WHAT I GET BACK", d)
                 this.setState({message: ""})
-            })
+            }).then(this.dmFetch)
         })
     }
 
