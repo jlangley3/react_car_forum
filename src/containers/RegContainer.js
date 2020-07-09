@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Register from '../components/Register'
+import { Redirect } from 'react-router-dom'
 
 
 //const URL = "http://localhost:3000/api/v1/login"
@@ -37,7 +38,8 @@ export default class RegContainer extends Component {
              )
          })
          .then(resp => resp.json())
-         .then( data => {this.props.updateUser(data)})
+         .then( data => {this.props.updateUser(data);
+            })
         //  .then(data => {
         //      console.log(this.state.username, this.state.password, data)
         //      let {username, password} = this.state
@@ -67,9 +69,13 @@ export default class RegContainer extends Component {
             })
         })
         .then(x => {
-            window.location.replace('localhost:3000/login') // look into this.
+            return <Redirect to='/about' /> // look into this.
         })
      }
+
+    //  componentDidUpdate() {
+        
+    //  }
 
 
      handleChange = (event) => {

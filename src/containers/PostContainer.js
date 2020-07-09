@@ -96,7 +96,7 @@ export default class PostContainer extends Component {
             <div>
                 <CreatePost handleSubmit={this.handleSubmit} handleChange={this.handleChange} newPost={this.state}/>
                 <PostsList posts={this.state.postsArray} handleDelete={this.handleDelete} currentUser={this.props.currentUser}/>
-                <Route exact path={match.url} render={() => <h3>Posts List</h3>}/>
+                <Route exact path={match.url} render={() => <h3></h3>}/>
                 <Route path={`${match.url}/:postId`} render={routerProps => <Posts {...routerProps} posts={this.state.postsArray} /> }/>
 
             </div>

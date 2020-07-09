@@ -64,7 +64,11 @@ class App extends React.Component {
                     <Redirect to="/profile"/> :
                 <LoginContainer updateUser={this.updateUser}/>
           } />
-                <Route exact path="/register" render={ () => <RegContainer updateUser={this.updateUser} />}/>
+                
+                <Route exact path="/register" render={ () => 
+                    this.state.currentUser ?
+                    <Redirect to="/profile"/> :
+                <RegContainer updateUser={this.updateUser} />}/>
                 <Route exact path="/about" component={About}/>
                 {/* <Route exact path="/search" component={SearchContainer}/> */}
 
@@ -94,6 +98,10 @@ class App extends React.Component {
                 <Route path="*" component={LoginContainer}/>
             </Switch>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
             <Footer />
             </Router>
             </div>
