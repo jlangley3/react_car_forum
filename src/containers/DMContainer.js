@@ -154,35 +154,3 @@ export default class DMContainer extends Component {
     }
 }
 
- //   handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log("DM stuff", event.target)
-    // //    this.testFetch()
-    //     let {username, password} = this.state
-    //     fetch(URL, {
-    //         method: "POST",
-    //         headers: {"Content-Type": "application/json", "Accept": "application/json"},
-    //         body: JSON.stringify({
-    //               username: username,
-    //               "password_digest": password
-    //            }
-    //         )
-    //     })
-    //     .then(resp => resp.json())
-    //     .then(console.log)
-    //   }
-// dmFetch = () => {
-//     console.log("You made it!")
-//     let {username, password} = this.state
-//     fetch(URL + this.state.user_id, {
-//         method: "POST",
-//         headers: {"Content-Type": "application/json", "Accept": "application/json"},
-//         body: JSON.stringify({
-//               username: username,
-//               password: password
-//            }
-//         )
-//     })
-//     .then(resp => resp.json())
-//     .then(console.log)
-// }
