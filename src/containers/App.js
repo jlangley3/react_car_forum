@@ -113,9 +113,4 @@ class App extends React.Component {
 export default App;
 
 
-      //       {this.state.currentUser ? }
-      //        <Route exact path="/profile" render={() =>
-      //   this.state.currentUser ? <Profile
-      //     currentUser={this.state.currentUser} />:
-      //     <Redirect to="/login" />
-      // } />
+    
