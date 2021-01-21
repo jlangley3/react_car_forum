@@ -33,9 +33,4 @@ const Search = props => {
 export default Search
 
 
-// <div className="ui search">
-//   <div className="ui icon input">
-//     <input className="prompt" type="text" name="search" onChange={props.handleSearch} value={props.search}/>
-//     <i className="search icon" />
 
-// onSubmit={this.props.submit}
