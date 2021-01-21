@@ -40,24 +40,7 @@ export default class RegContainer extends Component {
          .then(resp => resp.json())
          .then( data => {this.props.updateUser(data);
             })
-        //  .then(data => {
-        //      console.log(this.state.username, this.state.password, data)
-        //      let {username, password} = this.state
-        //      console.log(username, password)
-        //      fetch("http://localhost:3000/api/v1/login", {
-        //          method: "POST",
-        //          headers: {"Content-Type": "application/json", "Accept": "application/json"},
-        //          body: JSON.stringify({
-        //              username: username,
-        //              password: password
-        //          })
-        //      })
-        //  })
-        // .then(resp => resp.json())
-        // .then(data => {
-        //     localStorage.setItem('jwt', data.token)
-        //     this.props.updateUser(data.user)
-        // })
+    
         .then(() => {
             this.setState({
                 username: "",
@@ -73,9 +56,7 @@ export default class RegContainer extends Component {
         })
      }
 
-    //  componentDidUpdate() {
-        
-    //  }
+    
 
 
      handleChange = (event) => {
